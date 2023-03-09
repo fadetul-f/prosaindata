@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crawling Data (Tugas 1) &#8212; Project Sain Data</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Project Sain Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/fadetul-f/prosaindata/master?urlpath=tree/docs/Crawling.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/fadetul-f/prosaindata"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/fadetul-f/prosaindata/issues/new?title=Issue%20on%20page%20%2FCrawling.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Crawling.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Crawling Data (Tugas 1)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="crawling-data-tugas-1">
+<h1>Crawling Data (Tugas 1)<a class="headerlink" href="#crawling-data-tugas-1" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>DATA TWITTER</p></li>
+<li><p>DATA PTA TRUNOJOYO</p></li>
+<li><p>DATA BERITA ONLINE</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/twintproject/twint.git
+<span class="o">%</span><span class="k">cd</span> twint
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal: destination path &#39;twint&#39; already exists and is not an empty directory.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/prosaindata/tugas/twint
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install . -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Processing /content/drive/MyDrive/prosaindata/tugas/twint
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 1)) (3.7.0)
+Requirement already satisfied: aiodns in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 2)) (3.0.0)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 3)) (4.6.3)
+Requirement already satisfied: cchardet in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 4)) (2.1.7)
+Requirement already satisfied: dataclasses in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 5)) (0.6)
+Requirement already satisfied: elasticsearch in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 6)) (8.6.2)
+Requirement already satisfied: pysocks in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 7)) (1.7.1)
+Requirement already satisfied: pandas&gt;=0.23.0 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 8)) (1.3.5)
+Requirement already satisfied: aiohttp_socks&lt;=0.4.1 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 9)) (0.4.1)
+Requirement already satisfied: schedule in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 10)) (1.1.0)
+Requirement already satisfied: geopy in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 11)) (1.17.0)
+Requirement already satisfied: fake-useragent in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 12)) (1.1.1)
+Requirement already satisfied: googletransx in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 13)) (2.4.2)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (6.0.4)
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (21.4.0)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.1)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (1.8.2)
+Requirement already satisfied: pycares&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from aiodns-&gt;-r requirements.txt (line 2)) (4.3.0)
+Requirement already satisfied: elastic-transport&lt;9,&gt;=8 in /usr/local/lib/python3.8/dist-packages (from elasticsearch-&gt;-r requirements.txt (line 6)) (8.4.0)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2022.7.1)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.21.6)
+Requirement already satisfied: geographiclib&lt;2,&gt;=1.49 in /usr/local/lib/python3.8/dist-packages (from geopy-&gt;-r requirements.txt (line 11)) (1.52)
+Requirement already satisfied: importlib-resources&gt;=5.0 in /usr/local/lib/python3.8/dist-packages (from fake-useragent-&gt;-r requirements.txt (line 12)) (5.10.2)
+Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (from googletransx-&gt;-r requirements.txt (line 13)) (2.25.1)
+Requirement already satisfied: urllib3&lt;2,&gt;=1.26.2 in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (1.26.14)
+Requirement already satisfied: certifi in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (2022.12.7)
+Requirement already satisfied: zipp&gt;=3.1.0 in /usr/local/lib/python3.8/dist-packages (from importlib-resources&gt;=5.0-&gt;fake-useragent-&gt;-r requirements.txt (line 12)) (3.13.0)
+Requirement already satisfied: cffi&gt;=1.5.0 in /usr/local/lib/python3.8/dist-packages (from pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.8/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.15.0)
+Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp-&gt;-r requirements.txt (line 1)) (2.10)
+Requirement already satisfied: pycparser in /usr/local/lib/python3.8/dist-packages (from cffi&gt;=1.5.0-&gt;pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (2.21)
+Building wheels for collected packages: twint
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for twint (setup.py) ... ?25l?25hdone
+  Created wheel for twint: filename=twint-2.1.21-py3-none-any.whl size=38870 sha256=64dd0cc7e2df84705084d2c1f75849afe1784438dec5245938607a1662791861
+  Stored in directory: /tmp/pip-ephem-wheel-cache-42yblx1y/wheels/20/e1/2d/7f29314c8c0e321c6f657dd9646e875153f3ea8481209ac26f
+Successfully built twint
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: twint
+  Attempting uninstall: twint
+    Found existing installation: twint 2.1.21
+    Uninstalling twint-2.1.21:
+      Successfully uninstalled twint-2.1.21
+Successfully installed twint-2.1.21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install <span class="nv">aiohttp</span><span class="o">==</span><span class="m">3</span>.7.0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: aiohttp==3.7.0 in /usr/local/lib/python3.8/dist-packages (3.7.0)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (3.0.1)
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (21.4.0)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (6.0.4)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (1.8.2)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (3.0.4)
+Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp==3.7.0) (2.10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">twint</span>
+<span class="kn">import</span> <span class="nn">nest_asyncio</span>
+
+<span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">Config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Search</span> <span class="o">=</span> <span class="s2">&quot;Anies Baswedan&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Limit</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Store_csv</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Output</span> <span class="o">=</span> <span class="s2">&quot;Anies.csv&quot;</span>
+
+<span class="n">twint</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628418928795058177 2023-02-22 15:38:21 +0000 &lt;WedanganCip&gt; @yuzinatalia @aniesbaswedan Berarti lu sudah kebal, gw sering dimaki maki sampai dikafirin juga
+1628418613702193152 2023-02-22 15:37:06 +0000 &lt;fazmamvani&gt; @marlina_idha @beautydyah @aniesbaswedan @AgusYudhoyono klu masalah Utang blm di bayar dan itu untuk dana kampanye dan serangan pajar masuk ranah apa,,,??
+1628418457623728130 2023-02-22 15:36:29 +0000 &lt;Chynthia_K&gt; . Aku Berusaha memahami Pola Berfikirnya pak @aniesbaswedan. Bagaimana mungkin bisa menghadirkan Keadilan Sosial ditengah&quot; masyarakat dengan menggunakan APBN jika Dia jadi Presiden,Kalau Management Penggunaan APBD sewaktu menjadi Gubernur saja &quot;Lost Control&quot;  Stop menipu  https://t.co/JM7f4iL5h3
+1628418432269176834 2023-02-22 15:36:23 +0000 &lt;jokerjutex&gt; @mas_yo1276 @Joker_Wedoks @chandranararya @aniesbaswedan @aniesbaswedan  jadi Presiden Yemen horeee 😅
+1628418416838340608 2023-02-22 15:36:19 +0000 &lt;ArthaArtha15&gt; @ike_hw71 @aniesbaswedan Di DKI @aniesbaswedan  juga ngomong fokus bangun manusianya tapi yang di pamerkan JIS bukan SDMnya 🥲🥲🥲
+1628417678997352450 2023-02-22 15:33:23 +0000 &lt;Yono2910&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono  https://t.co/McM5Ar4S6r
+1628417669799239681 2023-02-22 15:33:21 +0000 &lt;HendryS84858335&gt; @ch_chotimah2 @satriohendri @aniesbaswedan @ganjarpranowo @GunRomli @ferdinand_mpu Inilah rakyatnya kadrun 😂  https://t.co/6n88TBKJMW
+1628417655014326273 2023-02-22 15:33:18 +0000 &lt;jamal_aswan&gt; @hariankompas @ganjarpranowo @prabowo @aniesbaswedan Bubarkan aja surve anda itu yg penuh kebohongan
+1628417480082456579 2023-02-22 15:32:36 +0000 &lt;McDwee&gt; @aniesbaswedan @NasDem Ini cuma 1 contoh aja...  https://t.co/VTPisCx8c2
+1628417453041799171 2023-02-22 15:32:29 +0000 &lt;TriyonoSetiawa5&gt; @Chaves1305 @Masdjodi1 @prabowo @aniesbaswedan Mbekkkkk  https://t.co/cEuhXOkPm8
+1628417410708676608 2023-02-22 15:32:19 +0000 &lt;Gsiberat8055&gt; @aniesbaswedan Mau berubah jadi sapidermen pak?
+1628417395663728640 2023-02-22 15:32:16 +0000 &lt;daffiriffi&gt; @ch_chotimah2 @aniesbaswedan ..folback ya... 🙏
+1628417262368747522 2023-02-22 15:31:44 +0000 &lt;Yono2910&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono  https://t.co/LrvrGwZzjI
+1628416926337888256 2023-02-22 15:30:24 +0000 &lt;Partai_Slebew&gt; @riksayuda @PKSejahtera @AgusYudhoyono @aniesbaswedan 😂😂😂
+1628416918649729030 2023-02-22 15:30:22 +0000 &lt;zamal_wilda&gt; @Ndranomade @RachelMarshal12 @JokoWah33372742 @CEBONGINSAF3 @DsSupriyady @geloraco @jokowi @kaesangp @aniesbaswedan Nah, berarti bener kan eloe emank gak punya mimpi. Soal nya kalau loe punya mimpi juga gak akan tercapai. Remeh sih gue ama loe..
+1628416883119751169 2023-02-22 15:30:14 +0000 &lt;KerenProlink&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono 👇🤭😂  https://t.co/Idd75yc6Qg
+1628416338137088000 2023-02-22 15:28:04 +0000 &lt;Veelgeenoo&gt; @BungNanda @aniesbaswedan Dia lagi monolog🤣
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628416287650217986 2023-02-22 15:27:52 +0000 &lt;soegeng1976&gt; @aniesbaswedan  https://t.co/2JietoX9iV
+1628416196885483520 2023-02-22 15:27:30 +0000 &lt;zamal_wilda&gt; @Ndranomade @LucyMar74806062 @RachelMarshal12 @JokoWah33372742 @CEBONGINSAF3 @DsSupriyady @geloraco @jokowi @kaesangp @aniesbaswedan Wkwkwkw.. dari eloe? Eloe buat makan diri loe sendiri aja susah.. 🤭
+1628416181341401088 2023-02-22 15:27:26 +0000 &lt;riksayuda&gt; 😂😂 @PKSejahtera @AgusYudhoyono  di obral aja nih 😂😂 kalau gak pake mobil pick up aja .. Tulis aja Di goreng dadakan 😂😂😂😂 kibulin orang 😂😂 @aniesbaswedan 😂😂😂 hati hati Takutnya nanti pada AWAS EDAN !!
+1628416117294399488 2023-02-22 15:27:11 +0000 &lt;GudhellMalioho1&gt; Halluu @aniesbaswedan begitukan hasil karyamu..menjijikan pk
+1628416115495026688 2023-02-22 15:27:11 +0000 &lt;TampubolonTjoki&gt; @KWidiarso @Joker_Wedoks Jika di janjikan jadi Presiden Kampus Paramadina mau deh @aniesbaswedan karena jabatan Presiden terlalu melekat se Indonesia. di pekaes ada sih, Presiden Pekaes mungkin bisa jadi. Klo gatot jadi Presiden NKRI.
+1628416024650592256 2023-02-22 15:26:49 +0000 &lt;Rantie_Ry&gt; @aniesbaswedan Smakin mbual jaya
+1628415982367830016 2023-02-22 15:26:39 +0000 &lt;zamal_wilda&gt; @Ndranomade @RachelMarshal12 @JokoWah33372742 @CEBONGINSAF3 @DsSupriyady @geloraco @jokowi @kaesangp @aniesbaswedan Wkwkwkw.. Oo.. jadi eloe bingung? Bingung mau salurkan hasrat loe kemana? Kan ada tembok.. minimal kalau gak ada cewek yg doyan ama loe masih ada tembok yg gak akan ngelawan kalau loe apa2in..
+1628415971445833729 2023-02-22 15:26:36 +0000 &lt;FiraunBeleguk&gt; Kalo mo lihat tingkat kepuasan Rakyat asli terhadap pemimpinnya adalah antusias puluhan ribu melimpah bagaikan tumpahan banjir manusia menyambut Anies Baswedan ini asli tanpa polesan Pencitraan atau survei tolol. #JokowiLayakDimakzulkan  #JokowiLayakDimakzulkan
+1628415949476077569 2023-02-22 15:26:31 +0000 &lt;bkind2anothr&gt; @aniesbaswedan Rasulullah S.A.W bersabda: Sungguh jika kepala seorg laki2 ditusuk dgn jarum dr besi lbh baik baginya drpd dia menyentuh seorang perempuan yg tdk halal baginya (bkn istri atau mahramnya) HR ath-Thabarani dlm “al-Mu’jamul kabiir” (no. 486-487)
+1628415751739805697 2023-02-22 15:25:44 +0000 &lt;NanokNano89&gt; @aniesbaswedan Ente kadang&quot; ente🤣🤣🤣 Kek tukang obat loe wan
+1628415603148206080 2023-02-22 15:25:08 +0000 &lt;LikjonNoto&gt; @ch_chotimah2 @ganjarpranowo @aniesbaswedan Hwahaha.... Jujur harus, Ngibul jangan, Jangan paksa orang lain mengikuti para pendusta dan pendengki macam buzzeRp GP.
+1628415471639998467 2023-02-22 15:24:37 +0000 &lt;DrEvaChaniago&gt; The Power Of Emak - emak ✊🏻  Sen kanan…bisa belok kiri  Dilarang pengajian Malah makin kerajinan  Jangan ganggu periuk nasinya, apalagi agamanya !  Jangan siMbok…setan gundul aja minggir 😂  Eh malah pamer dukung Pak @aniesbaswedan &amp;amp; @AgusYudhoyono   Hajar Mak ! Ampun dijeee 🤣  https://t.co/LWu0LqSQ3B
+1628415408314392578 2023-02-22 15:24:22 +0000 &lt;Ardiyan39002642&gt; @aniesbaswedan Sadar diri,sadar Rai,sadar posisi,
+1628415301258985474 2023-02-22 15:23:56 +0000 &lt;henrysunardi851&gt; @ch_chotimah2 @aniesbaswedan termasuk saya juga kena blokkah...ya jgnlah saya org baik kok...☝
+1628415134401183746 2023-02-22 15:23:17 +0000 &lt;LucuTanpa&gt; @ebe_ganzo @aniesbaswedan Dorongan hati paling hitam
+1628414980394717185 2023-02-22 15:22:40 +0000 &lt;BungNanda&gt; Menepuk air di dulang Terpercik mukanya @aniesbaswedan 🤣🤣🤣
+1628414908907012101 2023-02-22 15:22:23 +0000 &lt;CarlaP5a&gt; @TeddGus @aniesbaswedan @pandji Hahaha... Si yohanes BasEdan mah emang jago modus &amp;amp; bersilat lidah😁🤣
+1628414759442984960 2023-02-22 15:21:47 +0000 &lt;SetiyonoWadi&gt; @aniesbaswedan Muka tembok 👎👎
+1628414499358375938 2023-02-22 15:20:45 +0000 &lt;Raffamaesa&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628414482140794881 2023-02-22 15:20:41 +0000 &lt;Raffamaesa&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628414475136294913 2023-02-22 15:20:40 +0000 &lt;Raffamaesa&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628414424422965251 2023-02-22 15:20:27 +0000 &lt;DimdimMasdim&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628414407788347394 2023-02-22 15:20:23 +0000 &lt;DimdimMasdim&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628414400926457857 2023-02-22 15:20:22 +0000 &lt;DimdimMasdim&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628414354726223872 2023-02-22 15:20:11 +0000 &lt;putriikiraanna&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628414338968211456 2023-02-22 15:20:07 +0000 &lt;putriikiraanna&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628414332336996355 2023-02-22 15:20:05 +0000 &lt;putriikiraanna&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628414312896413697 2023-02-22 15:20:01 +0000 &lt;WartaEkonomi&gt; SBY Belum Muncul, Pertemuan Surya Paloh dan AHY Disebut Belum Menujukkan Keseriusan Koalisi Pengusung Anies Baswedan  https://t.co/s29U9hIje6
+1628414286635872256 2023-02-22 15:19:55 +0000 &lt;BambangDewangga&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628414270789783552 2023-02-22 15:19:51 +0000 &lt;BambangDewangga&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628414263848222728 2023-02-22 15:19:49 +0000 &lt;BambangDewangga&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628414198098329600 2023-02-22 15:19:33 +0000 &lt;EnditaTata&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628414181769883650 2023-02-22 15:19:30 +0000 &lt;EnditaTata&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628414181363056640 2023-02-22 15:19:29 +0000 &lt;bkind2anothr&gt; @aniesbaswedan Pak Anies yg baik, Sy mengingatkan dgn rasa hormat dan persaudaraan yg kuat. Kalau kurang berkenan mohon dimaafkan saya ya pal
+1628414174354350080 2023-02-22 15:19:28 +0000 &lt;EnditaTata&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628413886474096640 2023-02-22 15:18:19 +0000 &lt;dbluestarqueen&gt; @ch_chotimah2 @aniesbaswedan Akhirnya pemerintah ngikuti program Anies 0 % juga, jul kenyot semakin tepar..
+1628413875099156481 2023-02-22 15:18:16 +0000 &lt;Kayakuwek&gt; @ale_nyongee @ch_chotimah2 @aniesbaswedan  https://t.co/W375LplPyE
+1628413755590852608 2023-02-22 15:17:48 +0000 &lt;AlifAlhusein&gt; @aniesbaswedan Iya dulu banyak bacot, sekarang banyak ngeles!!!
+1628413473301614597 2023-02-22 15:16:41 +0000 &lt;revansian1&gt; @IsoWira @satriohendri @aniesbaswedan Baru kali ini rakyat biasa bisa wara wiri keliling Indonesia naik pesawat jet dikatakan fakta😂😂
+1628413030047559686 2023-02-22 15:14:55 +0000 &lt;A28Iwan&gt; @yuzinatalia @aniesbaswedan Itu tandanya buzzeramies level kedengkian dan kedongkolannya makin naik.... Ketawain aja... anggap hiburan...🤣🤣
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628412956081008641 2023-02-22 15:14:37 +0000 &lt;Kenikir27&gt; @kevynsaverio @aniesbaswedan Sadis nih Bang Mus. 🤣🤣
+1628412894563139584 2023-02-22 15:14:23 +0000 &lt;surya1667228934&gt; @GunRomli Hebat pak Anies Baswedan, tiap hari semakin nelambung namanya dibicarakan terus. Terimakasih bong anda sudah membuat pak Anies semakin terkenal.
+1628412796173172737 2023-02-22 15:13:59 +0000 &lt;wahyudiprojo&gt; @marlina_idha @aniesbaswedan Mantan gubernur satu2nya yg ahli berkata2 tapi prestasi NOL BESAR.  https://t.co/1oePuisC8P
+1628412664488800256 2023-02-22 15:13:28 +0000 &lt;1972Bonek&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Kalau masi kurang tak tambahin  https://t.co/SwBeZBwucN
+1628412660143517703 2023-02-22 15:13:27 +0000 &lt;Kenikir27&gt; @aniesbaswedan Gimana sih, nggak konsisten. Katanya lihat rekam jejak. 🤧🤧
+1628412658528706563 2023-02-22 15:13:26 +0000 &lt;YantoS09771908&gt; @aniesbaswedan Si ambisius yg sanggup melakukan segala cara trmsk cara - cara kotor &amp;amp; tdk fair demi ambisi nya !  DNA tdk pernah salah.   Msh ingat pemilihan rektor Paramadina ???
+1628412638500880384 2023-02-22 15:13:22 +0000 &lt;A28Iwan&gt; @yoyoktea9988 @yuzinatalia @aniesbaswedan  https://t.co/0BAIhZCVkv
+1628412370015121408 2023-02-22 15:12:18 +0000 &lt;k3n_ar0x&gt; @aniesbaswedan Ohhhh ternyataaaa  https://t.co/XgF7oNv49m
+1628412237571555330 2023-02-22 15:11:46 +0000 &lt;nephiIaxmus&gt; Lalu darimana AniesBaswedan mendapatkan dana 20 Trilyun tersebut? Serahkan semua persoalan pada Imam Jumbo, secara beliau paham kepada siapa harus meminta dukungan finansial kepada bandar minyak di Saudi. #Pilpres2024 #SANGE_AAAAAAAAAA #JarnasABW #SANGE_AAAAAAAAAAH
+1628412216805580800 2023-02-22 15:11:41 +0000 &lt;wellymerukh&gt; @emerson_yuntho @prastow @DitjenPK @KemenkeuRI Ke anies baswedan saja 😂😂😂harta kekayaan tdk wajar dianggap utang
+1628412197209776135 2023-02-22 15:11:36 +0000 &lt;anthwf77&gt; @aniesbaswedan Isi otaknya mah msh sama, bohong smua isinya...cuma usia aja yg berubah 😁  https://t.co/IElKuc2CQg
+1628412151454134273 2023-02-22 15:11:25 +0000 &lt;NdowehLambe&gt; @WagimanDeep212_ @KAPITANBESAR Pak @aniesbaswedan apa pernah kamu mikir, kalo bakal jadi begini
+1628412129002004480 2023-02-22 15:11:20 +0000 &lt;insptb&gt; @ch_chotimah2 @aniesbaswedan Folbek dong
+1628412049939378177 2023-02-22 15:11:01 +0000 &lt;yopieespe&gt; @en_jeu_L @aniesbaswedan @Fahrihamzah Semoga semakin dihujat semakin hebat...
+1628411929218932737 2023-02-22 15:10:33 +0000 &lt;jayapranabali&gt; @habibthink @aniesbaswedan @pandji Mana @pandji suaranya wkwkkwkw
+1628411888144117760 2023-02-22 15:10:23 +0000 &lt;UpasRitonga2&gt; @KATALOGIKAcom @03__nakula @AREAJULID @maman1965 @pengarang_sajak @addiems @iwanfals @aniesbaswedan 🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣
+1628411875699613697 2023-02-22 15:10:20 +0000 &lt;Mar33Cj&gt; @putri_Aalona @aniesbaswedan Padahal sdh ada door prize,buzzer ngehoax,pasang sipanduk sebesar kuping gajah, peluk²an,dadah dadah²an..tak naik²...
+1628411729209360385 2023-02-22 15:09:45 +0000 &lt;lee_inung&gt; @aniesbaswedan ET juga hadir.. dan beliau tdk spt bapak seolah olah paling berperan ..  Majelis ini didirikan habib kwitang th 1981 yg makamnya di perbaiki ahok. dan bpk selama 5 th jabatan gubernur lupa memakmurkan masjid apalagi bangun masjid. malu kalau liat rekam jejakmu
+1628411648003420160 2023-02-22 15:09:25 +0000 &lt;_Goentoer_&gt; Alhamdulillah elektabilitas @aniesbaswedan turun
+1628411599697633282 2023-02-22 15:09:14 +0000 &lt;ArivEveryday&gt; @TeddGus @aniesbaswedan  https://t.co/vbthlOIOxh
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628411594140188672 2023-02-22 15:09:13 +0000 &lt;Bolo_Airlangga&gt; #AirlanggaHartarto #GolkarIndonesia #Jokowi #GanjarPranowo #AniesBaswedan #nu  https://t.co/KQ8Qu3PQA5
+1628411343283032067 2023-02-22 15:08:13 +0000 &lt;mowglindo&gt; @Manganto85 @ch_chotimah2 @ganjarpranowo @aniesbaswedan Emang sejak kapan Mayoritas sekutunya FP1HT1 drun? BOWOSANDI sj kapok sm kadrunista LoL utak atik matamu klo kata sugik wkwkwk
+1628411263964577794 2023-02-22 15:07:54 +0000 &lt;Partai_Slebew&gt; @Muhamma87797214 @siregar_ferro @aniesbaswedan 🤣🤣🤣🤣
+1628411206997544963 2023-02-22 15:07:40 +0000 &lt;DE__JAVU_&gt; @aniesbaswedan Dulu Gaberner sekarang pengangguran.
+1628411125963558914 2023-02-22 15:07:21 +0000 &lt;MochRomansa&gt; @PKSejahtera DKI Akui Program Rumah DP 0% Rupiah @aniesbaswedan Gagal. Lalu Apa Yang akan di Banggakan Dari Bacapres Yg Tak Mampu Bekerja Hanya di 1 Daerah.Sedangkan Indonesia Banyak Daerah.  https://t.co/YWOR1pJYLp
+1628411050608705536 2023-02-22 15:07:03 +0000 &lt;tvOneNews&gt; Anies Baswedan Pastikan Hadir di Deklarasi Capres PKS Besok  https://t.co/rQK72cdGjZ
+1628410750787293185 2023-02-22 15:05:52 +0000 &lt;liktono&gt; @aniesbaswedan makin banyak yg bully Anies, anehnya dia makin populer....biar yg waras aja yg milih   dia 👏
+1628410692180258817 2023-02-22 15:05:38 +0000 &lt;Muhamma87797214&gt; @Partai_Slebew @siregar_ferro @aniesbaswedan Bener juga sih anies sama sekali tak dikenal di daerah2 tapi ngapain juga pake gerilya segala apa takut boroknya terbongkar,  bisa jadi.
+1628410637079687168 2023-02-22 15:05:24 +0000 &lt;jokodoloq&gt; @kangmirdja @JhonniSinaga20 @KPK_RI @aniesbaswedan Mana mungkin berani tangkap yg di jakarta beraninya ott daerah yg kecil kecil
+1628410460033933312 2023-02-22 15:04:42 +0000 &lt;_Goentoer_&gt; Kadrun Yaman ini @aniesbaswedan semakin ngawur  https://t.co/kdCwe8l6w1
+1628410326986424320 2023-02-22 15:04:11 +0000 &lt;Aim44508493&gt; #KoalisiPerubahan #AHYpemimpinPerubahan #DemokratProPerubahan #DemokratBerkoalisiDenganRakyat #DemokratSulSel #H.NI&#39;MATULLAH,SE.Ak @ikraropu   22-2-2023  Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan. #DemokratPimpinPerubahan AHY S14P  https://t.co/Gz9c185zdr
+1628410257927176192 2023-02-22 15:03:54 +0000 &lt;AdiPriyono95&gt; @aniesbaswedan Apasih maksud Anda menggunakan narasi Fir&#39;aun pd pilkada kemarin itu?
+1628410029044015104 2023-02-22 15:02:59 +0000 &lt;OrangBa13921152&gt; @aniesbaswedan Mungkin bisa lebih parah yg skrg,  dulu ga bisa kerja klo skrg ga bisa apa2. Dulu beruntung terpilih jadi gubernur krn politik identitas klo skrg mgkin akan lbh parah.
+1628410021875970048 2023-02-22 15:02:58 +0000 &lt;siImamR&gt; @m4sf13 @non_Dindun @bachrum_achmadi @aniesbaswedan Ya EGP , rakyat Indonesia juga EGP soal ijasah itu , cuma lo doang yg ribut. Wkwkwkwk
+1628409910445903872 2023-02-22 15:02:31 +0000 &lt;DaltonSembiring&gt; @G336387 @TeguhSudarisman @AndiSinulingga @aniesbaswedan Benar. Kita kan sudah akomodatif tapi dia ngelunjak terus.
+1628409861607395328 2023-02-22 15:02:20 +0000 &lt;fajaronline&gt; Besok, Relawan Anies di Sulsel Temui Partai Ummat  https://t.co/jg7pFAR3zI #AniesBaswedan #PartaiUmmat #Pilpres2024 #RelawanAnies
+1628409859405393920 2023-02-22 15:02:19 +0000 &lt;Abenk12356649&gt; @yohngenes @ch_chotimah2 @aniesbaswedan Hahahah anjing2 peking bani bipang cuma bayk di medsos kalu dilapangan nol besar 😀😀😀 dasar bani bipang otak sungsang 😀😀
+1628409748688359424 2023-02-22 15:01:53 +0000 &lt;onomsalam2pas&gt; Anies Baswedan: Pengajian Menghasilkan Ibu-ibu Berpengetahuan!  https://t.co/dIIhi0EoQS Covid-19 Rabu 22 Februari 2023 Ada 6.734.818 Meninggal 160.894 Bapaknya Kemenkeu Mario Dandy Satrio 56 M Harley Rubicon Hotman Paris Kabul Dubai Liverpool #AniesPresiden2024 #AniesPresiden2024  https://t.co/LNkcKsEN7G
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628409747497193473 2023-02-22 15:01:52 +0000 &lt;JoshGrobax&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono  https://t.co/YDji1DoF5S
+1628409681491415041 2023-02-22 15:01:37 +0000 &lt;_Goentoer_&gt; Yohanies @aniesbaswedan ini tidak punya keahlian sebagai pemimpin. Anies gagal tidak punya prestasi apapun saat jadi gubernur DKI. Anies hanya ahli tata kata. Olah kata. Ngibul. Ngeles. jangan sampai terkena oleh kibulan Anies
+1628409517427003393 2023-02-22 15:00:57 +0000 &lt;Partai_Slebew&gt; @siregar_ferro @aniesbaswedan Stress dia itu 😂
+1628409455040921600 2023-02-22 15:00:43 +0000 &lt;Abenk12356649&gt; @Hen_Wijaya_ @ch_chotimah2 @aniesbaswedan Gimana mau keluar kandang si anjing Buzer tolol @ch_chotimah2  dia kan gembel  cuma pura2 hidup hedon bir dibilang wow padahal asli nya manusi Goa dia 😀😀😀😀
+1628409425487880192 2023-02-22 15:00:36 +0000 &lt;G336387&gt; @DaltonSembiring @TeguhSudarisman @AndiSinulingga @aniesbaswedan Kayaknya kita ketemu kadrun sinting. Alias edan ,,,,, 🤣🤣🤣🤣🤣 tinggak ajah 🏃🏃🏃🏃🏃🏃🏃
+1628409366889238530 2023-02-22 15:00:22 +0000 &lt;Aim44508493&gt; #KoalisiPerubahan #AHYpemimpinPerubahan #DemokratProPerubahan #DemokratBerkoalisiDenganRakyat #DemokratSulSel #H.NI&#39;MATULLAH,SE.Ak @ikraropu   22-2-2023  Masyarakat ingin Duet Anies Baswedan - AHY di 2024 #DemokratPimpinPerubahan AHY S14P  https://t.co/XXryluvydW
+1628409352049811458 2023-02-22 15:00:18 +0000 &lt;IwalKincai4&gt; @ch_chotimah2 @aniesbaswedan Bukan ngak bisa buktikan tapi penampilan sama Tweet beda
+1628409312682053634 2023-02-22 15:00:09 +0000 &lt;Partai_Slebew&gt; @DE__JAVU_ @aniesbaswedan 😂😂😂😂
+1628409281862340608 2023-02-22 15:00:01 +0000 &lt;WartaEkonomi&gt; Surya Paloh dan AHY Lakukan Pertemuan, Tim Anies Baswedan Sebut Bukan Pertemuan Biasa, Ada Apa?  https://t.co/BkpgdQxdMu
+1628409254263820289 2023-02-22 14:59:55 +0000 &lt;Partai_Slebew&gt; @Kutang2tang @aniesbaswedan 😂😂😂😂
+1628409253701775360 2023-02-22 14:59:55 +0000 &lt;UlehAbdoellah2&gt; @DeSanthos2 @linda_gunawan @aniesbaswedan 🤣🤣🤣
+1628409200085995520 2023-02-22 14:59:42 +0000 &lt;Partai_Slebew&gt; @KupuKupu_Malam_ @aniesbaswedan Mereka itu KONTOL : Kelompok Oposisi Ngotot Tapi Otak Lelet
+1628409091013095425 2023-02-22 14:59:16 +0000 &lt;Joe19751975&gt; @aniesbaswedan @NasDem perubahan utk lbh baik bukan jadi mundur
+1628409055835484161 2023-02-22 14:59:07 +0000 &lt;recehtwit&gt; @aniesbaswedan Survey recehan, capres 2024
+1628408881264345089 2023-02-22 14:58:26 +0000 &lt;siImamR&gt; @non_Dindun @m4sf13 @bachrum_achmadi @aniesbaswedan Iye bener, junjungan gw g bs tuh, sambil dadah dadah, sambil masuk got 🤪
+1628408871676162048 2023-02-22 14:58:24 +0000 &lt;KupuKupu_Malam_&gt; @Partai_Slebew @aniesbaswedan nda usah keliling bro...udah pasti,ya  selevel jualan pentol aja
+1628408765631578113 2023-02-22 14:57:58 +0000 &lt;Imrajula3&gt; @iif888 @BosPurwa Emangnya kapan dan dimana Anies Baswedan mati²an ngaku² sebagai pribumi sementara yg lainnya enggak ?   Kasih link dong 🤣🤣🤣
+1628408747730292736 2023-02-22 14:57:54 +0000 &lt;Dinsamaza&gt; @aniesbaswedan Bukan yang dulu tapi tidak berani menyatakan HTI dan FPI organisasi terlarang.😂😂
+1628408719884316673 2023-02-22 14:57:47 +0000 &lt;hennydya_l&gt; Sama Kek @aniesbaswedan  nyagub juga ngutang bangun JIS juga Ngutang Formula EEK juga Ngutang ya kan elo kemana drun .. kalo bangun isnfratrukrtu di jual emang salah ?? Wong juga bermanfaat nanti jalan gak di bangun ya ngebacot katanya gak ada pembangunan kadrun otak sungsang
+1628408714066812930 2023-02-22 14:57:46 +0000 &lt;ArdaniasaY&gt; 357 Hari Menuju Pemilu - Pilpres 2024, Litbang Kompas: Suara Anies Baswedan Lari ke Ridwan Kamil  Good 👍  https://t.co/KjHKQfLTOs
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628408668965453830 2023-02-22 14:57:35 +0000 &lt;Abenk12356649&gt; @ch_chotimah2 @aniesbaswedan Kalau si anjing Buzer nya sudah gonggong sana sini kya si tolol @ch_chotimah2  itu pertanda si anjing nya lgi Laot dan buat yg biaya hidup tang sok hedon tapi hasil dari adu domba 😀😀😀 lasian mak dan bpk nya anjing Buzer besar bukan jdi orang Tpi jdi bgsat 😀😀😀  https://t.co/rs076SobkA
+1628408582176706562 2023-02-22 14:57:15 +0000 &lt;cahaya08nkri78&gt; @aniesbaswedan @sandiuno @NasDem @AgusYudhoyono @SBYudhoyono @salimsegaf @hnurwahid @FPKSDPRRI @ZUL_Hasan @airlangga_hrt   https://t.co/j3sLT2psmU
+1628408547368370177 2023-02-22 14:57:06 +0000 &lt;likhanhan23&gt; @aniesbaswedan Dulu bukan siapa².  https://t.co/hPL961Ol4K
+1628408541106294784 2023-02-22 14:57:05 +0000 &lt;DedeAndry11&gt; @AkuAtikaFaya @NasDem @aniesbaswedan  https://t.co/Qb1UxH2i4c
+1628408392862801920 2023-02-22 14:56:29 +0000 &lt;roez82&gt; @withont @AmArA_gen2 @aniesbaswedan @tatakujiyati @DokterTifa @aagym @Mdy_Asmara1701 @ekowboy2 @GunRomli @said_didu
+1628408336910798848 2023-02-22 14:56:16 +0000 &lt;DE__JAVU_&gt; @Partai_Slebew @aniesbaswedan Dan akhirnya mereka sadar, capresnya si @aniesbaswedan  ga di kenal. 🤣🤣🤣
+1628408333567922176 2023-02-22 14:56:15 +0000 &lt;m4sf13&gt; @siImamR @non_Dindun @bachrum_achmadi @aniesbaswedan Tapi pastinya Anies Bukan Pemilik Ijazah Palsu
+1628408286600101889 2023-02-22 14:56:04 +0000 &lt;ArdaniasaY&gt; Karim mengatakan hasil survei tersebut sebetulnya tidak aneh karena posisi Ridwan Kamil selama ini selalu di nomer empat urutan Capres 2024 setelah Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan.
+1628408243814039559 2023-02-22 14:55:54 +0000 &lt;Haidararrash&gt; @kiahaly @saiful_mujani @AndiSinulingga @aniesbaswedan halaaah. percaya survey sama aja percaya sama berhala
+1628408184166842368 2023-02-22 14:55:40 +0000 &lt;_Goentoer_&gt; Ini salah satu janji Pak @jokowi jika jadi Presiden .dia akan lebih mudah menangani banjir.dan di fokuskan saat DKI di jabat oleh PJ pak Heru. Kenapa tidak di era Anies. Sebab @aniesbaswedan tak becus tangani DKI dan tidak punya skill dalam mengurus wilayah
+1628407891404402689 2023-02-22 14:54:30 +0000 &lt;non_Dindun&gt; @siImamR @m4sf13 @bachrum_achmadi @aniesbaswedan Sakit hati ya...junjungan loe ngga sehebat anies ... kasian deh loe blok 🤣🤣🤣
+1628407796827054081 2023-02-22 14:54:07 +0000 &lt;Kutang2tang&gt; @Partai_Slebew @aniesbaswedan Kalau pake doorprize umroh sama agya pasti rame. Cuma ingetin aja..
+1628407703289880579 2023-02-22 14:53:45 +0000 &lt;DanChow7&gt; @aniesbaswedan tetep cuma babi   🤭
+1628407661808201728 2023-02-22 14:53:35 +0000 &lt;KuncungKecil&gt; Apa hebatnya?😂😂 @aniesbaswedan @NasDem @PKSejahtera @HelmiFelis_ @bachrum_achmadi @ekowboy2 @Mdy_Asmara1701 @tatakujiyati @marlina_idha @aniesfor2024 @JarnasABW Lihat video Salin Kabar! #TikTok  https://t.co/MSyyZrW4Zi
+1628407545630183424 2023-02-22 14:53:07 +0000 &lt;wanda_Hamdalah&gt; Karim mengatakan hasil survei tersebut sebetulnya tidak aneh karena posisi Ridwan Kamil selama ini selalu di nomer empat urutan Capres 2024 setelah Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628407466001301505 2023-02-22 14:52:48 +0000 &lt;DaltonSembiring&gt; Dongkrak @aniesbaswedan sudah sampai pada titik jenuh, tidak ada lagi manuver atau inisiatif baru meningkatkan elektabilitas. Hanya buang2 energy dan dana. Evaluasi ulang saja. Anies tukar posisi jadi cawapres Prabowo. Be realistic. Satu2nya jalan keluar, honestly seriously 😒😑
+1628407445331783682 2023-02-22 14:52:43 +0000 &lt;BSipoel&gt; @SantorinisSun Mantap dukung Anies Baswedan for RI1 untuk Indonesia Maju dan Damai 👍
+1628407389790818309 2023-02-22 14:52:30 +0000 &lt;Partai_Slebew&gt; Lemparkan aja pak @aniesbaswedan ke jalan, nanti masyarakat yg datang kenalan.  😂😂  https://t.co/oVl9jglNwW
+1628407382706638848 2023-02-22 14:52:29 +0000 &lt;wanda_Hamdalah&gt; 357 Hari Menuju Pemilu - Pilpres 2024, Litbang Kompas: Suara Anies Baswedan Lari ke Ridwan Kamil  Good 👍  https://t.co/5KEmwI2ZmJ
+1628407361445711872 2023-02-22 14:52:23 +0000 &lt;andiebs&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono karakter nya suka yg muda dan empuk dipeluk
+1628407338473488384 2023-02-22 14:52:18 +0000 &lt;ManahanSianipa1&gt; Pintar aje si @aniesbaswedan milih&quot; yg muda.
+1628407301806882816 2023-02-22 14:52:09 +0000 &lt;STresnowat1&gt; @bian_raffa @aniesbaswedan semoga di jauhkan dari kecurangan. Semoga nasibnya tdk seperti pak timbul 😂
+1628407237982195712 2023-02-22 14:51:54 +0000 &lt;andiebs&gt; @aniesbaswedan sekarang sudah lebih berani
+1628407147511058432 2023-02-22 14:51:32 +0000 &lt;wanda_Hamdalah&gt; Karim mengatakan hasil survei tersebut sebetulnya tidak aneh karena posisi Ridwan Kamil selama ini selalu di nomer empat urutan Capres 2024 setelah Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan.
+1628407127990751232 2023-02-22 14:51:28 +0000 &lt;Lembayung071&gt; @McDwee @aniesbaswedan @musniumar @ekowboy2 @tatakujiyati @jokowi 🤣🤣🤣
+1628407083325603841 2023-02-22 14:51:17 +0000 &lt;SatukanIndoNews&gt; Surya Paloh Sebut AHY Lebih dari Pantas Jadi Cawapres Anies Baswedan  https://t.co/8FfFKnCXKY
+1628407082931347456 2023-02-22 14:51:17 +0000 &lt;JessicaNeo4&gt; @aniesbaswedan cieeee merubah diri ya 😆😆😆😆😆 klu bukan yg dulu trs ngapain bawa bawa rekam jejek
+1628406975817199616 2023-02-22 14:50:52 +0000 &lt;STresnowat1&gt; @AprilGandi00 @aniesbaswedan amiin 🙏
+1628406866949865473 2023-02-22 14:50:26 +0000 &lt;STresnowat1&gt; @Deslini2 @aniesbaswedan 😂👍
+1628406862852005895 2023-02-22 14:50:25 +0000 &lt;Kaki_Langith&gt; @HRMalik12 @ch_chotimah2 @aniesbaswedan Wkwkwk
+1628406845525336064 2023-02-22 14:50:20 +0000 &lt;Simanjunta9Nico&gt; PKS Membenarkan Deklarasi Anies Baswedan Bacapres di Kantor DPP Besok.   &quot;Musyawarah Majelis Syura PKS akan membahas terkait langkah strategis Partai, persiapan menjelang Pemilu serentak”  https://t.co/zh046h4Zk2  @dppbronies @akang_hero @MardaniAliSera @LANGKAHANIES @SeputarAHY
+1628406789766287361 2023-02-22 14:50:07 +0000 &lt;Lembayung071&gt; @RK_Lamongan @aniesbaswedan @musniumar @ekowboy2 @tatakujiyati @jokowi 😂😂😂😂😂
+1628406724788105222 2023-02-22 14:49:52 +0000 &lt;Pak_Eko_Malang&gt; @aniesbaswedan Jakarta aja gak bisa ngatasi..  Apalagi sebesar Indonesia...  Indonesia besar.... Waspada
+1628406645633191936 2023-02-22 14:49:33 +0000 &lt;Partai_Slebew&gt; @hardye76 Lemparkan aja @aniesbaswedan ke jalan, nanti masyarakat yg datang kenalan. 🤣
+1628406580554403844 2023-02-22 14:49:17 +0000 &lt;aliefxzn&gt; @ch_chotimah2 @aniesbaswedan Aslinya lu bergelambir bong
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628406577429643269 2023-02-22 14:49:17 +0000 &lt;Delon_Mask&gt; Karim mengatakan hasil survei tersebut sebetulnya tidak aneh karena posisi Ridwan Kamil selama ini selalu di nomer empat urutan Capres 2024 setelah Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan.
+1628406536434520064 2023-02-22 14:49:07 +0000 &lt;KayunWirya&gt; @rahmansandre Anies baswedan
+1628406415802118146 2023-02-22 14:48:38 +0000 &lt;TriyonoSetiawa5&gt; @TeddGus @aniesbaswedan @pandji Jgn kau ajak aku Dukung orang yg suka BF lho ya...  https://t.co/9KhYfMlhKu
+1628406242829008896 2023-02-22 14:47:57 +0000 &lt;abclqq&gt; @aniesbaswedan Baarokallaah fiik. Keren bang Anies. Sy doakan dpt memimpin Indonesia mulai thn 2024 nanti.
+1628406203499048960 2023-02-22 14:47:47 +0000 &lt;modien_ganesa&gt; @ebe_ganzo @gubernurkoplak @aniesbaswedan Dpt Mulus,kenceng amat peluknya...pria punya selera...  https://t.co/fifU7G3K08
+1628406143843471360 2023-02-22 14:47:33 +0000 &lt;sumsel24&gt; Ketua Umum Demokrat, AHY Tegaskan Dukungan Calon Presiden ke Anies Baswedan Tidak Main Main Tapi Untuk Menang: Saat Kunjungan Ketum Partai Nasdem, Surya Paloh, AHY tegaskan dukangan parti Demokrat terhadap Anies Baswedan untuk menang Pilpres  https://t.co/4K1z7olmp7
+1628406111480201216 2023-02-22 14:47:25 +0000 &lt;Khairaniss&gt; @ch_chotimah2 @aniesbaswedan Sejak prtama saya follow akun mba @ch_chotimah2 sy yakin mba itu ciwi. Klo kadrun bedaaaa....percaya mba itu batangan.   🤣🤣🤣
+1628406037710774274 2023-02-22 14:47:08 +0000 &lt;cebongmodyar&gt; @yuzinatalia @aniesbaswedan Gw yakin elu ada disini nih 😄😄😄  https://t.co/8jobPAYDRL
+1628406009491501056 2023-02-22 14:47:01 +0000 &lt;dpcpdmuaraenim&gt; Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan #DemokratPimpinPerubahan AHY S14P  https://t.co/MMtUQ5Om2d
+1628405956932677634 2023-02-22 14:46:49 +0000 &lt;Delon_Mask&gt; 357 Hari Menuju Pemilu - Pilpres 2024, Litbang Kompas: Suara Anies Baswedan Lari ke Ridwan Kamil  Good 👍  https://t.co/ng78NRUHQJ
+1628405932366626817 2023-02-22 14:46:43 +0000 &lt;dpcpdmuaraenim&gt; Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan #DemokratPimpinPerubahan AHY S14P  https://t.co/kaneiKhPuL
+1628405801093316609 2023-02-22 14:46:11 +0000 &lt;dpcpdmuaraenim&gt; Emak-Emak Bersatu Tak Bisa Dikalahkan !! Cc: @aniesbaswedan - @AgusYudhoyono #DemokratPimpinPerubahan AHY S14P  https://t.co/TC470r27bX
+1628405792612433920 2023-02-22 14:46:09 +0000 &lt;dpcpdmuaraenim&gt; Ketum @AgusYudhoyono menghadiri milad BKMT bersama @aniesbaswedan. #DemokratPimpinPerubahan AHY S14P  https://t.co/sKnH5TsEf6
+1628405773222154240 2023-02-22 14:46:05 +0000 &lt;soeliarto&gt; @aniesbaswedan Benar  dulu pendukung jokowi sekarang antitesa jokowi
+1628405725469999104 2023-02-22 14:45:53 +0000 &lt;Delon_Mask&gt; Karim mengatakan hasil survei tersebut sebetulnya tidak aneh karena posisi Ridwan Kamil selama ini selalu di nomer empat urutan Capres 2024 setelah Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan.
+1628405691852652544 2023-02-22 14:45:45 +0000 &lt;dpcpdmuaraenim&gt; ADU MEKANIK!!! Demokrat, Nasdem dan PKS Sepakat Dukung Anies Baswedan #DemokratPimpinPerubahan AHY S14P  https://t.co/kFa7lAG6dY
+1628405672705654784 2023-02-22 14:45:41 +0000 &lt;antaranews&gt; &quot;AHY memiliki jiwa kepemimpinan yang luar biasa. Sebab, AHY memilih untuk mengutamakan kepentingan perubahan yang lebih besar daripada menjadi calon presiden,&quot; kata jubir Anies Baswedan.   https://t.co/pWxR9MAsCd
+1628405568833748993 2023-02-22 14:45:16 +0000 &lt;jayacand&gt; Capres koalisi perubahan pak @aniesbaswedan atau pak surya Paloh si. Bantu jawab @Fahrihamzah @Dennysiregar7 @ekokuntadhi1
+1628405483374800896 2023-02-22 14:44:56 +0000 &lt;dpcpdmuaraenim&gt; Momen Anies Baswedan dan AHY kompak nonton bareng Konser Dewa 19 di JIS. #DemokratPimpinPerubahan AHY S14P  https://t.co/8mpqK3N2Zw
+1628405449958785025 2023-02-22 14:44:48 +0000 &lt;HRMalik12&gt; @Kaki_Langith @ch_chotimah2 @aniesbaswedan Baru denger ada tikus maen sabun ? 😥🤔
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628405448109076480 2023-02-22 14:44:47 +0000 &lt;dpcpdmuaraenim&gt; Berbagi keseruan nonton bareng live konser Dewa 19 dan nyanyi lagu “Risalah Hati” bareng Mas @aniesbaswedan #DemokratPimpinPerubahan AHY S14P  https://t.co/KOhys4LeJ8
+1628405438856454144 2023-02-22 14:44:45 +0000 &lt;dpcpdmuaraenim&gt; Gaspoll Pak Anies Baswedan!!! Mas AHY sudah pas! ✊✊✊ #DemokratPimpinPerubahan AHY S14P  https://t.co/XAnFi4NW1J
+1628405427368239105 2023-02-22 14:44:42 +0000 &lt;dpcpdmuaraenim&gt; Mas AHY Tokoh paling banyak dibicarakan sebagai Cawapres Anies Baswedan 🥰 #DemokratPimpinPerubahan AHY S14P  https://t.co/okW2I7c5B5
+1628405413065691137 2023-02-22 14:44:39 +0000 &lt;dpcpdmuaraenim&gt; AHY Layak Dampingi Anies Baswedan #DemokratPimpinPerubahan AHY S14P  https://t.co/NRPEpmbOh0
+1628405404580614145 2023-02-22 14:44:37 +0000 &lt;McDwee&gt; @Lembayung071 @aniesbaswedan @musniumar @ekowboy2 @tatakujiyati @jokowi  https://t.co/pujzbJhtJk
+1628405403657850882 2023-02-22 14:44:37 +0000 &lt;dpcpdmuaraenim&gt; AHY Layak Dampingi Anies Baswedan di Pilpres 2024 mendatang✊ #DemokratPimpinPerubahan AHY S14P  https://t.co/XU5sYnYCjl
+1628405395277639680 2023-02-22 14:44:35 +0000 &lt;dpcpdmuaraenim&gt; Mas AHY Tokoh paling banyak dibicarakan sebagai Cawapres Anies Baswedan 🥰 #DemokratPimpinPerubahan AHY S14P  https://t.co/YodjD01NKu
+1628405386020806657 2023-02-22 14:44:32 +0000 &lt;dpcpdmuaraenim&gt; Gaspoll Pak Anies Baswedan!!! Mas AHY sudah pas! ✊✊✊ #DemokratPimpinPerubahan AHY S14P  https://t.co/DYguQG1ET4
+1628405351463911424 2023-02-22 14:44:24 +0000 &lt;dpcpdmuaraenim&gt; Mau tunggu apalagi pak @aniesbaswedan langsung Deklarasi dah sama mas @AgusYudhoyono #DemokratPimpinPerubahan AHY S14P  https://t.co/MUs7ElsV2I
+1628405342299385856 2023-02-22 14:44:22 +0000 &lt;dpcpdmuaraenim&gt; Gaspoll mas @AgusYudhoyono dan pak @aniesbaswedan ... MENANG!!! #DemokratPimpinPerubahan AHY S14P  https://t.co/1uG2l4wS1G
+1628405332669255680 2023-02-22 14:44:20 +0000 &lt;dpcpdmuaraenim&gt; Cawapres mas @AgusYudhoyono insyaallah pak @aniesbaswedan memang di pilpres 2024 mendatang✊✊ #DemokratPimpinPerubahan AHY S14P  https://t.co/VuXXzXhBbq
+1628405323999633410 2023-02-22 14:44:18 +0000 &lt;C_Rangkito&gt; @aniesbaswedan Iya, skrg kemunafikan lu makin terbuka.. 🙈  Dasar muka badak lu 🤦‍♂️
+1628405219561463809 2023-02-22 14:43:53 +0000 &lt;KiRegel&gt; @en_jeu_L @aniesbaswedan @Fahrihamzah Yang perlu kita Cermati Catat benar2 dari Pernyataan Bung Fahri Hamzah ini adalah Takut Isi Tasnya Berkurang...... 🤣🤣🤣🤣🤣
+1628405074555998208 2023-02-22 14:43:18 +0000 &lt;SusantoSwelly&gt; @KangNanooo @ngowatchindo @5dhany5 @Dsatria_NKRI @Sukardi2017 @DivHumas_Polri @CCICPolri @poldalampung @aniesbaswedan Hahahahahahahahahhaa  Banggain JIS buat beribadah, kapan di tanya nggak jawab 😀😀
+1628405016766861313 2023-02-22 14:43:04 +0000 &lt;Ronnie_Rusli&gt; Dlm pmrnthn @jokowi ., Anies Baswedan pendukung Jokowi duduk dlm kabinet sbg Mendikbud kemudian menjabat Gub DKI. Sedangkan @prabowo diminta menduduki jabatan Menko Polhukam tp menolak hny mau menjabat sbg Menhan kl tdk yaa tdk usah. Mk Menhan diberikan. Ini bedanya. Bkn pengemis
+1628404952283615233 2023-02-22 14:42:49 +0000 &lt;Kaki_Langith&gt; @HRMalik12 @ch_chotimah2 @aniesbaswedan Wkwkwk,.kayak tikus aja
+1628404821912092673 2023-02-22 14:42:18 +0000 &lt;fyasof83&gt; @P_etkLeeSegh @aniesbaswedan Satu jalur ini mah sama kitah
+1628404692027060225 2023-02-22 14:41:47 +0000 &lt;AbuNawa48105494&gt; @aniesbaswedan @NasDem Kami tidak ingin &quot;perubahan&quot; yang hanya ingin &quot;merusak&quot;.  Tapi ingin berkelanjutan yang &quot; MEMBANGUN&quot;
+1628404687795011586 2023-02-22 14:41:46 +0000 &lt;NovelBamukmin&gt; Bersama aniesbaswedan kita tegakkan sistem khilafah di Indonesia! #Pilpres2024
+1628404584556425217 2023-02-22 14:41:21 +0000 &lt;Semak_Belukar01&gt; @aniesbaswedan Omegot,,, iki bojone sopo dipeluk2  https://t.co/KZl18bHct2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628404454881107969 2023-02-22 14:40:50 +0000 &lt;ApukArie&gt; Pandangan Anies Baswedan terkait sosok AHY begitu lugas, jernih, dan objektif. #DemokratPimpinPerubahan AHY S14P  https://t.co/LcJhydCsHq
+1628404231505059843 2023-02-22 14:39:57 +0000 &lt;MakmunBahtiar&gt; @ch_chotimah2 @aniesbaswedan Foto Asli koq itu.
+1628404086205980673 2023-02-22 14:39:23 +0000 &lt;ocukam&gt; @GunawanAryaPutr @KPU_ID @aniesbaswedan Kasihan bohir nya 🤭
+1628404028433633284 2023-02-22 14:39:09 +0000 &lt;ibn_sjamsu&gt; @aniesbaswedan Yankee imperialists datang ke Indonesia u/ mengajak Ikhwanul Muslimin mendudukkan &quot;anak manja yg licik &amp;amp; gak becus kerja&quot; sbg boneka di kursi kekuasaan spy mereka leluasa menjarah-rayah kembali negeri ini. Ya Allah ya Robbi, lindungilah negeri &amp;amp; bangsa kami.🤲
+1628403976105500672 2023-02-22 14:38:56 +0000 &lt;marfiadi&gt; @AriefBudianto77 @aniesbaswedan Lah sudah kan.  https://t.co/bPM4uvJVuK
+1628403596579729408 2023-02-22 14:37:26 +0000 &lt;KuncungKecil&gt; Kelakuan keren ini 😂 @NasDem @Surya_Paloh @_PranandaSP_ @aniesbaswedan @HelmiFelis_ @bachrum_achmadi @ekowboy2 @Mdy_Asmara1701 Lihat video GARUDA NKRI! #TikTok  https://t.co/9XDeM7NLd5
+1628403479197925378 2023-02-22 14:36:58 +0000 &lt;ntar_yaa&gt; @aniesbaswedan Nyoh..  https://t.co/mFfvuNoI7t
+1628403205230190592 2023-02-22 14:35:53 +0000 &lt;kodok_anti&gt; @HRubbina @anieskembang @RAndilyan @Tan_Mar3M @aniesbaswedan @NasDem 🤣🤣🤣🤣🤣🤣🤣🤣  https://t.co/JvvadIQTAv
+1628403086460088326 2023-02-22 14:35:24 +0000 &lt;orangbi39148447&gt; @Nubitech_ @Abaaah @aniesbaswedan @AgusYudhoyono Perbaiki gmn klo hati lu pada dengki dan merasa paling berimaan..isis di suriah juga sama merasa paling beriman dan anggpa smua ciptaan ALLAH SWT yg lain sbagai rendahan..tolol kaum khilfa..makanya timteng perang terus krn otak kaya lu pada..wkwkkwk
+1628402912849440768 2023-02-22 14:34:43 +0000 &lt;kodok_anti&gt; @anieskembang @HRubbina @RAndilyan @Tan_Mar3M @aniesbaswedan @NasDem Akibat otak di isi taik babi 😂  https://t.co/F1Ue9aLGhR
+1628402869518110721 2023-02-22 14:34:33 +0000 &lt;BlackcoTanya&gt; Dapat ticket jg ga, sdh menghayal pilih cawapres😂  Juru Bicara Anies Baswedan, Sudirman Said menyebut Anies perlu waktu dan ketenangan untuk menentukan cawapresnya di Pilpres 2024 nanti.    https://t.co/mAflyYpp6Q
+1628402836555075590 2023-02-22 14:34:25 +0000 &lt;hends08&gt; @ch_chotimah2 @aniesbaswedan @NasDem @pandji Elo tuh manusia paling goblok sedunia 🤣🤣🤣🤣
+1628402652999737344 2023-02-22 14:33:41 +0000 &lt;Adzats2&gt; @Accompliceeeee @aniesbaswedan Klo menang pilkada gak usah di bayar..pasti ngerti dong..unyil kadal gurun ini payah 🤣
+1628402641670914048 2023-02-22 14:33:38 +0000 &lt;siImamR&gt; @m4sf13 @non_Dindun @bachrum_achmadi @aniesbaswedan Yg bersihin got pake tangan ya? Yg atur foto pake gerobak sampah ya ? Yg sibuk dadah dadah tp akhir nya kecebur got ya? Iya sama, tumben gw satu frekuewnsi sama kadrun wkwkwkwk
+1628402565397508096 2023-02-22 14:33:20 +0000 &lt;orangbi39148447&gt; @Budionotaslim3 @Abaaah @aniesbaswedan @AgusYudhoyono Apa untungnya di dukung kadrun2..byk emak2 kadrun gila.wkwkkwkwkkw..pesong lu krn dukung khilafa isis
+1628402554886590465 2023-02-22 14:33:17 +0000 &lt;anieskembang&gt; @HRubbina @kodok_anti @RAndilyan @Tan_Mar3M @aniesbaswedan @NasDem Lebih murah otak junjungan loe di obral bareng nasi adem tetep ga laku🤣🤣😝😝😝💩💩💩💩💩
+1628402552831344640 2023-02-22 14:33:17 +0000 &lt;KangNanooo&gt; @SusantoSwelly @ngowatchindo @5dhany5 @Dsatria_NKRI @Sukardi2017 @DivHumas_Polri @CCICPolri @poldalampung @aniesbaswedan JAKARTA IBADAH STADION 😀😀😀
+1628402517485948928 2023-02-22 14:33:09 +0000 &lt;DPC_PDMerangin&gt; Pak @aniesbaswedan bicara soal AHY @AgusYudhoyono #DemokratPimpinPerubahan AHY S14P  https://t.co/qaRZhFpEsj
+1628402475634925573 2023-02-22 14:32:59 +0000 &lt;eranasionalcom&gt; Anies Baswedan Sebut Pemilu Terbuka Lebih Sehat  https://t.co/ArKpIRd0q2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628402431490142208 2023-02-22 14:32:48 +0000 &lt;KhenSora&gt; @putri_Aalona @aniesbaswedan 🤣🤣🤣🤣🤣
+1628402400552980481 2023-02-22 14:32:41 +0000 &lt;DPC_PDMerangin&gt; Mas AHY di mata @aniesbaswedan 😍 #DemokratPimpinPerubahan AHY S14P  https://t.co/EMdfeFlTIN
+1628402308185980928 2023-02-22 14:32:19 +0000 &lt;AjaMaulana68&gt; @MardaniAliSera @PDemokrat @PKSejahtera @aniesbaswedan Pa mardani anda politikus hndal punya filing ga sih siapa figur yg di butuhkn untuk mnjadi pemimpin negara dn bngsa ini.! di pilpres 2019 dukungn anda kalah nah skrng anda dukung anies apa yakin menang. Fakta myoritas bngsa ini rkyat mnegh bwh adalah yg mnntukn kmnangan capres.
+1628402250950508544 2023-02-22 14:32:05 +0000 &lt;caturaryono2&gt; @Ichan_Pitoeng @JoshuaIgho @marlina_idha @aniesbaswedan @AgusYudhoyono  https://t.co/FErkHnD1AK
+1628402019269767171 2023-02-22 14:31:10 +0000 &lt;LeoKoko2002&gt; @SantorinisSun Gak laku!!!, jangankan diobral, gratisan juga gak bakal laku kalau jualannya Anies Baswedan!!!
+1628402019097800710 2023-02-22 14:31:10 +0000 &lt;HRubbina&gt; @anieskembang @kodok_anti @RAndilyan @Tan_Mar3M @aniesbaswedan @NasDem otak loe murahan
+1628401760141475840 2023-02-22 14:30:08 +0000 &lt;gundala2221&gt; Manusia? Yakin dirimu manusia brow? @aniesbaswedan  https://t.co/pELFvtSwwZ
+1628401756127502338 2023-02-22 14:30:07 +0000 &lt;DPC_PDMerangin&gt; Pandangan Anies Baswedan terkait sosok AHY begitu lugas, jernih, dan objektif. #DemokratPimpinPerubahan AHY S14P  https://t.co/h5ZnyvzNEE
+1628401747277545473 2023-02-22 14:30:05 +0000 &lt;mahandi22&gt; @aniesbaswedan maksdnya ydah gk butuh calon wakil yg gak ngutangin gitu..apa giamana
+1628401528951418881 2023-02-22 14:29:13 +0000 &lt;PDemokratjkt&gt; Ketum @AgusYudhoyono juga menegaskan bahwa sikap dan posisi politik Partai Demokrat untuk mengusung Anies Baswedan sebagai bacapres bukan hanya sekadar test the water.  #DemokratS14P #KemenanganBersama2024 @RAMujiyono   https://t.co/dkEP6XlJKb
+1628401434051092481 2023-02-22 14:28:50 +0000 &lt;0811Deanova&gt; @aniesbaswedan Super Man dong berubah2
+1628401292602413059 2023-02-22 14:28:17 +0000 &lt;Ihendraone2&gt; @ch_chotimah2 Ya elah baru tingkat Jateng udh gayanya selangit, belum nyampe ke tingkat nasional apalagi internasional, ga level cuk kalo dibandingkan Anies Baswedan...🤣 🤣👎👎👎  https://t.co/93oAvjcCqo
+1628401281571373056 2023-02-22 14:28:14 +0000 &lt;siImamR&gt; @non_Dindun @m4sf13 @bachrum_achmadi @aniesbaswedan Tp jadi invest. Fakta kan? G spt anis , bacot nya g ada tuh yg kejadian kecuali  tugu2 g jelas , gubernur  thamrin  ampe CSW doang. Wkwkwk
+1628401238235815936 2023-02-22 14:28:04 +0000 &lt;yunir_efri&gt; @LANGKAHANIES @aniesbaswedan Woyy cebong keparat melarat lu dengerin dg benar liat wajahnya yg bicara biar otak kalian jadi encer dikit 🤣🤣🤣
+1628401087245074433 2023-02-22 14:27:28 +0000 &lt;1ndra5ikumbang&gt; Anak muda itu memang minim pengalaman, maka dari itu mereka tidak menawarkan masa lalu. Mereka menawarkan masa depan. Masa depan seperti apa yang akan dihadirkan oleh mereka harus disiapkan dari sekarang.  Ayo anak2 muda ambil peran dalam membersamai Bpk @aniesbaswedan  https://t.co/l0c9eDUbbv
+1628401083075919874 2023-02-22 14:27:27 +0000 &lt;PDemokratjkt&gt; “Kami sepakat bahwa untuk mengusung perubahan dan perbaikan,  memberikan ruang kepada Saudara Anies Baswedan untuk bisa menjadi calon presiden yang juga diyakini bisa membawa atau merepresentasi gerakan perubahan,” jelas @AgusYudhoyono  #DemokratS14P   https://t.co/UZcO7ZpBI1
+1628401079330430980 2023-02-22 14:27:26 +0000 &lt;susiemilia0605&gt; @keuangannews_id Bae lah , da TOS Aya di halte and fikiran rakyat  ANIES BASWEDAN PILIHAN KITA 👍
+1628400994123124738 2023-02-22 14:27:05 +0000 &lt;SupriadiSatria&gt; @aniesbaswedan Utang Bayar Utang
+1628400912497790979 2023-02-22 14:26:46 +0000 &lt;Mdy_Asmara1701&gt; @asboedionoid @aniesbaswedan @AgusYudhoyono Iya, bisa aja Romo 😊
+1628400877990993920 2023-02-22 14:26:38 +0000 &lt;putri_Aalona&gt; @othex_prima @aniesbaswedan Setuju sob 🤭🤣
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628400859536322561 2023-02-22 14:26:33 +0000 &lt;CallMEdoel&gt; @sapasiap @triyanto_0157 @bengkeldodo @BANGSAygSUJUD @are_inismyname @kurawa @Haifa0man @Alie_Fahnoor @indadilmakmur @mike_ariteus @yosephrosario_ @aniesbaswedan Orang ga jelas gini nih.. Wkwkwk
+1628400840523530241 2023-02-22 14:26:29 +0000 &lt;anieskembang&gt; @kodok_anti @RAndilyan @Tan_Mar3M @aniesbaswedan @NasDem Hahaha..Penyembah junjungan murahan hoby banget baca berita murahan..Ya wajar sie memang gerombolan murahan..Junjungan nya aja di keler sana sini demi nasi adem..Hahaha...Murahan sie!!!😝😝😝🤣🤣🤣
+1628400833279971328 2023-02-22 14:26:27 +0000 &lt;putri_Aalona&gt; @ababil_santoso @aniesbaswedan Masalahnya urat malunya udah putus, makanya ngotot mencalonkan 🤭
+1628400670570332162 2023-02-22 14:25:48 +0000 &lt;putri_Aalona&gt; @wirryo @aniesbaswedan Sepertinya 🤭😂
+1628400652924891138 2023-02-22 14:25:44 +0000 &lt;TatangSalman&gt; @aniesbaswedan @NasDem Perubahan seperti jakarta ? Preett  https://t.co/6tod6N7UIu
+1628400636122533888 2023-02-22 14:25:40 +0000 &lt;putri_Aalona&gt; @Whisju @aniesbaswedan Trus ap dong 🤭
+1628400581877579777 2023-02-22 14:25:27 +0000 &lt;jodie_pn&gt; @demokrat_jakpus Mantap Jiwa... @aniesbaswedan dan @AgusYudhoyono ... Inshaa Allah kalian Berdua dlm Lindungan ALLAH Swt dlm melangkah memenuhi Panggilan Ibu Pertiwi.  &quot; Merenung Seperti Gunung, Bergerak Bergelombang Bagaikan Ombak &quot;
+1628400378437042176 2023-02-22 14:24:39 +0000 &lt;Jhonkosmik&gt; Dari hati yg paling dalam, saya memaafkan kekhilafan habib @NovalAssegaf atas tuduhan sy sering DM apalagi utk ingatkan ttg Anies Baswedan.  Sy bukan tipikal akun yg tanpa adab. Sy tutup akun jika ada bukti pernah DM ke habib.
+1628400305112240131 2023-02-22 14:24:21 +0000 &lt;TeguhSudarisman&gt; @DaltonSembiring @G336387 @AndiSinulingga @aniesbaswedan Selamat ya Nak, dari tadi bolak-balik mention @aniesbaswedan, membuatmu layak disebut sebagai Top Fan! Tingkatkan terus nyinyiranmu, supaya peringkatmu bisa naik menjadi Electric Fan. 🤣🤣🤣🤣 Bye.  https://t.co/HTxULM6ziV
+1628400155140694016 2023-02-22 14:23:45 +0000 &lt;Srimuly85735447&gt; @TeddGus @aniesbaswedan Berarti dia ga hutang bloghgoblogh
+1628399990430375937 2023-02-22 14:23:06 +0000 &lt;mas_yo1276&gt; @Joker_Wedoks @chandranararya Halaaaah preeeet... Penggiringan opini thok..  Ketakutan sama pak @aniesbaswedan ya????  Saya tahu pak saat sampean dengan topi natal ngomong apa saja..  Pokoknya pak Anies Baswedan jangan sampai jadi presiden ..
+1628399881688879104 2023-02-22 14:22:40 +0000 &lt;JengKanq&gt; Soal Pemilu Tertutup-Terbuka,  Anies Baswedan: Terbuka Lebih Sehat!      https://t.co/aMNEZdYS5y  https://t.co/Lahtb9Vxd6
+1628399602780209153 2023-02-22 14:21:34 +0000 &lt;tempodotco&gt; Elektabilitas Anies Baswedan Anjlok, Sudirman Said: Masih Ada Ceruk  https://t.co/XOHCMDxSwr #TempoNasional
+1628399586250469376 2023-02-22 14:21:30 +0000 &lt;tali_buras&gt; @ch_chotimah2 @aniesbaswedan  https://t.co/i8YH1zfw0t
+1628399564008087552 2023-02-22 14:21:24 +0000 &lt;m4sf13&gt; @siImamR @non_Dindun @bachrum_achmadi @aniesbaswedan Ya pasti geli lah !!!   Wong mainannya di GORONG GORONG melulu
+1628399513579962369 2023-02-22 14:21:12 +0000 &lt;errie_betterman&gt; @yuzinatalia @aniesbaswedan Buzzernya china
+1628399487638175746 2023-02-22 14:21:06 +0000 &lt;DaltonSembiring&gt; @TeguhSudarisman @G336387 @AndiSinulingga @aniesbaswedan Wong Edan 😅
+1628399473125920771 2023-02-22 14:21:03 +0000 &lt;tali_buras&gt; @ch_chotimah2 @aniesbaswedan  https://t.co/aygeHGzEou
+1628399340581683200 2023-02-22 14:20:31 +0000 &lt;kevynsaverio&gt; @aniesbaswedan Iya betul, dulu 50 M, skrg 5 T
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628399251901530112 2023-02-22 14:20:10 +0000 &lt;liputan6dotcom&gt; Mengenal Tuty Alawiyah, yang Dipuji Anies Baswedan Menambah Pengetahuan Ibu-ibu Pengajian  https://t.co/iEYQk8AoRt
+1628399242346897409 2023-02-22 14:20:08 +0000 &lt;tali_buras&gt; @ch_chotimah2 @aniesbaswedan  https://t.co/QK4hshoWrh
+1628399222130352128 2023-02-22 14:20:03 +0000 &lt;Jefry66570788&gt; @AkuAtikaFaya @NasDem @aniesbaswedan Yg sdh d krjakan d jkrta parkir air
+1628399026289934336 2023-02-22 14:19:16 +0000 &lt;BaliShadesail&gt; @aniesbaswedan Benar beda dengan yg dulu, dulu masih malu malu sekarang malu maluin, dulu masih tidak berani terang terangan skr sudah terang benerang, dulu  hanya merangkai kata dan skr malah buat jakarta berantakan ....semua ada di jejak digital...!!!
+1628398861692850183 2023-02-22 14:18:37 +0000 &lt;SultanH04160212&gt; Pendukung Anies BaswEdan adalah orang2 sedang menikmati nikmatnya halu........ kata2 indah Anies .  https://t.co/5xUIV7nK4g
+1628398835675594754 2023-02-22 14:18:31 +0000 &lt;WongedaneE&gt; @aniesbaswedan  https://t.co/VoeTKjUbZF
+1628398830403321858 2023-02-22 14:18:30 +0000 &lt;kevynsaverio&gt; @muispebrianto Ini org dr mukanya aja klihatan manusia muka puter bale. Pintar ngomong tp realisasinya nol besar...itulah kau @aniesbaswedan
+1628398787009089539 2023-02-22 14:18:19 +0000 &lt;_Goentoer_&gt; Tukang bacot dan tukang ngibul yg tak punya prestasi ini @aniesbaswedan
+1628398744478842880 2023-02-22 14:18:09 +0000 &lt;Perbedaan_wajar&gt; @ch_chotimah2 Ini kan survey nya dunia kawan sekalian, apakah kalian tdk tau Survey dr dunia Gaib  yg siap menerima Program pembangunan Manusia yg di gagas oleh @aniesbaswedan, pOsisi pertama dg tkt elektabilitas 30% dan kedua 12% oleh AHEY dll daei 2.000 makhluk Gaib di Markez Syar&#39;iet
+1628398730931216388 2023-02-22 14:18:06 +0000 &lt;WongedaneE&gt; @Chynthia_K @aniesbaswedan Anjir😂😂😂
+1628398634537717760 2023-02-22 14:17:43 +0000 &lt;TeguhSudarisman&gt; @DaltonSembiring @G336387 @AndiSinulingga @aniesbaswedan 🤣🤣🤣🤣  https://t.co/bnK1fLq1w3
+1628398614711255040 2023-02-22 14:17:38 +0000 &lt;GantineRamane&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Jual diri aja elektabilitas nyungsep, apalagi di endorse ma penjilat2 yg menutup fakta, tambah kaku berdiri.
+1628398447874416645 2023-02-22 14:16:58 +0000 &lt;Aniesprsdn2024&gt; @ganjarpranowo Pak Anies Baswedan pilihan rakyat Indonesia pemimpin yang baik dan cerdas presiden di tahun 2024
+1628398402978598913 2023-02-22 14:16:48 +0000 &lt;KuncungKecil&gt; @aniesbaswedan Iso ra koe?😂 Lihat video bidadari dihati! #TikTok  https://t.co/7MxIl6nkIu
+1628398337513889804 2023-02-22 14:16:32 +0000 &lt;DaltonSembiring&gt; @TeguhSudarisman @G336387 @AndiSinulingga @aniesbaswedan Penipu dan pengkhianat mau nyapres  https://t.co/0DGTuCCE70
+1628398228629770240 2023-02-22 14:16:06 +0000 &lt;ukicrysant&gt; Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan.  AHY S14P #DemokratPimpinPerubahan  https://t.co/ZHvbUVpPyc
+1628398114272083969 2023-02-22 14:15:39 +0000 &lt;ukicrysant&gt; Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan.  AHY S14P #DemokratPimpinPerubahan  https://t.co/UTgaFcG1pX
+1628397983128748034 2023-02-22 14:15:08 +0000 &lt;Ardiyan39002642&gt; @Hasbil_Lbs @aniesbaswedan @AgusYudhoyono Secara pribadi saya tak yakin @aniesbaswedan dan @AgusYudhoyono bisa membawa perubahan.@aniesbaswedan menjadi gubernur DKI Jakarta tak ada prestasi cuma janji saja.@AgusYudhoyono juga tak ada prestasi juga belum pernah menjadi penjabat negara kecuali TNI itu pun mundur.
+1628397849707945986 2023-02-22 14:14:36 +0000 &lt;merdekadotcom&gt; Respons Anies Baswedan Dapat Dukungan dari PKS  https://t.co/l94m9wkjEc
+1628397822352695297 2023-02-22 14:14:29 +0000 &lt;Ass_thre3&gt; @ch_chotimah2 @aniesbaswedan Tuhan selalu menunjukkan keburukannya pada niat buruk...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628397811787247616 2023-02-22 14:14:27 +0000 &lt;InongMarina&gt; Selain itu, Litbang Kompas juga menemukan bahwa korelasi positif juga dialami oleh Partai Nasdem dan bakal calon presiden yang mereka usung, Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628397810080178177 2023-02-22 14:14:26 +0000 &lt;_Goentoer_&gt; Sudah pasti Ulama . Kiyai. Dai . Ustad yg lurus tidak akan mendukung bapak politik identitas @aniesbaswedan
+1628397782749831170 2023-02-22 14:14:20 +0000 &lt;PedomanRakyat&gt; Besok PKS Deklarasikan Anies Baswedan Sebagai Capres: Insyaallah Saya Datang!  https://t.co/DNehsKcHN8
+1628397753197006848 2023-02-22 14:14:13 +0000 &lt;Yohanes_ARB&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Puji tuhan saya calon PelerCiden ke 2024.  https://t.co/gsOwAvEhF1
+1628397715985158146 2023-02-22 14:14:04 +0000 &lt;TeguhSudarisman&gt; @DaltonSembiring @G336387 @AndiSinulingga @aniesbaswedan  https://t.co/EsbckhJC18
+1628397710972952577 2023-02-22 14:14:03 +0000 &lt;EddoPurnama&gt; Selain itu, Litbang Kompas juga menemukan bahwa korelasi positif juga dialami oleh Partai Nasdem dan bakal calon presiden yang mereka usung, Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628397561886441477 2023-02-22 14:13:27 +0000 &lt;gubernurkoplak&gt; @ebe_ganzo @aniesbaswedan 😝😝😝😝🫵🤭
+1628397505309446144 2023-02-22 14:13:14 +0000 &lt;non_Dindun&gt; @siImamR @m4sf13 @bachrum_achmadi @aniesbaswedan Junjungan kau yg plangak plongok maksudnya yg jd bahan tertawaan...plis inpes tu mai kantri 🤣🤣🤣🤣
+1628397438380933121 2023-02-22 14:12:58 +0000 &lt;DaltonSembiring&gt; @TeguhSudarisman @G336387 @AndiSinulingga @aniesbaswedan Sifat turunkan susah sekali dirubah  https://t.co/q9XLkYK2t1
+1628397428067139595 2023-02-22 14:12:55 +0000 &lt;ZainalPras&gt; Selain itu, Litbang Kompas juga menemukan bahwa korelasi positif juga dialami oleh Partai Nasdem dan bakal calon presiden yang mereka usung, Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628397425395400705 2023-02-22 14:12:55 +0000 &lt;mas_yo1276&gt; @ch_chotimah2 @erickthohir @musniumar Berarti sing pekok ya si PJ... Ga bisa mandiri kayak pak @aniesbaswedan ...
+1628397395552899073 2023-02-22 14:12:47 +0000 &lt;yonobubut70&gt; @ch_chotimah2 @aniesbaswedan Tuh dah tk follow lama sekaaaaaaaali...gmn tuh..
+1628397388225478658 2023-02-22 14:12:46 +0000 &lt;kadrunophobia&gt; @aniesbaswedan  @Mdy_Asmara1701  @marlina_idha  @msaid_didu  @HelmiFelis_  @Muhammad_Saewad  @Tan_Mar3M  @abu_waras  @musniumar  @panca66  @alisyarief  @AndiSinulingga  @bachrum_achmadi  🤣🤣
+1628397385062944768 2023-02-22 14:12:45 +0000 &lt;ziuullll&gt; @ZettaZahra2 @aniesbaswedan Anas napi ap ? Coba jelaskn
+1628397362128515080 2023-02-22 14:12:39 +0000 &lt;nephiIaxmus&gt; Selain itu tentunya fulus pun akan mengalir lancar, sehingga tidak perlu lagi bergantung pada Nasdem, Pdemokrat dan PKSejahtera yang sebenarnya hanya ingin memanfaatkan popularitas Anies Baswedan semata. #Pilpres2024 #SANGE_AAAAAAAAAA #JarnasABW #SANGE_AAAAAAAAAAH
+1628397311490674688 2023-02-22 14:12:27 +0000 &lt;Tatarori80&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Percayalah mak peot kmu akan nangis.😃
+1628397217601179648 2023-02-22 14:12:05 +0000 &lt;MenejerKaravan&gt; @abu_waras harusnya lo tarik anies baswedan buat debat sama fahri, die dicapreskan tunjukin dongbitak lo jangan andelin dukungan USA ke die gampang dipoles, bentar lagi juga majalah times bisa kasih AB orang paling cerdas didunia, tarungin otaknya buktikan digelanggnag jangan sembunyi
+1628397205123112960 2023-02-22 14:12:02 +0000 &lt;AyaNayyaya&gt; Selain itu, Litbang Kompas juga menemukan bahwa korelasi positif juga dialami oleh Partai Nasdem dan bakal calon presiden yang mereka usung, Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628397029780242434 2023-02-22 14:11:20 +0000 &lt;yohanis_Yaman&gt; @sapasiap @Totok_Lotus @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan 🤣🤣🤣
+1628396926289973248 2023-02-22 14:10:56 +0000 &lt;rahmamamarah&gt; Selain itu, Litbang Kompas juga menemukan bahwa korelasi positif juga dialami oleh Partai Nasdem dan bakal calon presiden yang mereka usung, Anies Baswedan. #BersamaJuara Ridwan Kamil
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628396760711442434 2023-02-22 14:10:16 +0000 &lt;Totok_Lotus&gt; @sapasiap @yohanis_Yaman @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan Siap bro @sapasiap  Menunggu antrian. 🤣🤣🤣
+1628396700221206528 2023-02-22 14:10:02 +0000 &lt;WartaEkonomi&gt; Lembaga Survei Ini Tempatkan Prabowo Subianto di Posisi Pertama, Elektabilitas Anies Baswedan Bikin Ngelus Dada!  https://t.co/s7xX3Lanzm
+1628396613457805314 2023-02-22 14:09:41 +0000 &lt;AncolMangkrak&gt; @aniesbaswedan Tapi jejak digital kebawa sampai mati. Klu kurang ngomong aja yah. Msh bnyk koq stok nya.  https://t.co/zq5Awtd5t5
+1628396612677681152 2023-02-22 14:09:41 +0000 &lt;ukicrysant&gt; Kader NasDem sebut AHY yang paling cocok jadi cawapres Anies Baswedan..  AHY S14P #DemokratPimpinPerubahan  https://t.co/ygBRuGZV2F
+1628396589307039745 2023-02-22 14:09:35 +0000 &lt;norbertusa&gt; @tentaralangit99 @Metro_TV @aniesbaswedan @AgusYudhoyono Yg eksekutor yg mana? 😂😂😂
+1628396552971784193 2023-02-22 14:09:27 +0000 &lt;gawaiindahkalbu&gt; @ch_chotimah2 @GunRomli @satriohendri @aniesbaswedan @ganjarpranowo @ferdinand_mpu mas cenul laki² kok berhijab , MO jd gay ?
+1628396531064901632 2023-02-22 14:09:21 +0000 &lt;_Goentoer_&gt; Hahahahahahaha. Colek @aniesbaswedan
+1628396528556724229 2023-02-22 14:09:21 +0000 &lt;qiarasilva&gt; @Ngadinopanser @ch_chotimah2 Laah adminnya di bayar buat ngadu domba warga dan fitnah pak Anies Baswedan
+1628396476283105281 2023-02-22 14:09:08 +0000 &lt;ukicrysant&gt; Saat Anies Baswedan menilai sosok AHY..  AHY S14P #DemokratPimpinPerubahan  https://t.co/JnVwQVKigN
+1628396473317748736 2023-02-22 14:09:08 +0000 &lt;BudidharmaWahyu&gt; @ch_chotimah2 @satriohendri @aniesbaswedan @ganjarpranowo @GunRomli @ferdinand_mpu Iya seh bener dari rakyat..tp kalo sampe wanabud kepilih..dia bakalan jd presiden pertama yg pernah DIPECAT..hahahaha
+1628396350961491969 2023-02-22 14:08:38 +0000 &lt;BestRajasa&gt; @212bowie @ch_chotimah2 @aniesbaswedan @NasDem @pandji Sudah daftar Kartu INDONESIA SEHAT? sekalian Kartu Indonesia Pintar nya juga ya
+1628396252781219842 2023-02-22 14:08:15 +0000 &lt;SuhartoLaswi&gt; Setelah melihat hasil survei LITBANG KOMPAS artinya  P Jokowi masa kini P Ganjar P masa depan  Anies Baswedan masa bodo
+1628396226692665344 2023-02-22 14:08:09 +0000 &lt;adi_adi02115829&gt; @Chynthia_K @aniesbaswedan @Joker_Wedoks Goblok aja , saat jadi Cagub Ngutang Puluhan Milyar masih di Usung tuk Capres, mungkin sekarang udah Ngutang lagi,  Hasil ga seberapa Kelebihan Bayar dimana²
+1628396136896798720 2023-02-22 14:07:47 +0000 &lt;Wahyu_Nces&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Nanti juga party lagi istri ahy 🤣🤣🤣
+1628396063584571392 2023-02-22 14:07:30 +0000 &lt;EddoPurnama&gt; Adapun elektabilitas figur capres berdasarkan survei Litbang Kompas Januari, sebagai berikut: 1. Ganjar Pranowo: 25,3 persen ; 2. Prabowo memperoleh: 18,1 persen ; 3. Anies Baswedan: 13,1 persen ; 4. Ridwan Kamil: 4 persen ; 5. Sandiaga Uno: 1,6 persen #BersamaJuara Ridwan Kamil
+1628396053472088065 2023-02-22 14:07:27 +0000 &lt;EddoPurnama&gt; Ganjar Pranowo masih berada di puncak klasemen terkait tingkat elektabilitas calon presiden (capres) dalam survei yang dilakukan Litbang Kompas Januari 2023. Di bawah gubernur Jawa Tengah itu ada nama Prabowo Subianto dan Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628396003064942594 2023-02-22 14:07:15 +0000 &lt;ZainalPras&gt; Adapun elektabilitas figur capres berdasarkan survei Litbang Kompas Januari, sebagai berikut: 1. Ganjar Pranowo: 25,3 persen ; 2. Prabowo memperoleh: 18,1 persen ; 3. Anies Baswedan: 13,1 persen ; 4. Ridwan Kamil: 4 persen ; 5. Sandiaga Uno: 1,6 persen #BersamaJuara Ridwan Kamil
+1628395992079908864 2023-02-22 14:07:13 +0000 &lt;ZainalPras&gt; Ganjar Pranowo masih berada di puncak klasemen terkait tingkat elektabilitas calon presiden (capres) dalam survei yang dilakukan Litbang Kompas Januari 2023. Di bawah gubernur Jawa Tengah itu ada nama Prabowo Subianto dan Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628395905824219136 2023-02-22 14:06:52 +0000 &lt;AyaNayyaya&gt; Adapun elektabilitas figur capres berdasarkan survei Litbang Kompas Januari, sebagai berikut: 1. Ganjar Pranowo: 25,3 persen ; 2. Prabowo memperoleh: 18,1 persen ; 3. Anies Baswedan: 13,1 persen ; 4. Ridwan Kamil: 4 persen ; 5. Sandiaga Uno: 1,6 persen #BersamaJuara Ridwan Kamil
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628395895585910784 2023-02-22 14:06:50 +0000 &lt;AyaNayyaya&gt; Ganjar Pranowo masih berada di puncak klasemen terkait tingkat elektabilitas calon presiden (capres) dalam survei yang dilakukan Litbang Kompas Januari 2023. Di bawah gubernur Jawa Tengah itu ada nama Prabowo Subianto dan Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628395839696809985 2023-02-22 14:06:36 +0000 &lt;rahmamamarah&gt; Adapun elektabilitas figur capres berdasarkan survei Litbang Kompas Januari, sebagai berikut: 1. Ganjar Pranowo: 25,3 persen ; 2. Prabowo memperoleh: 18,1 persen ; 3. Anies Baswedan: 13,1 persen ; 4. Ridwan Kamil: 4 persen ; 5. Sandiaga Uno: 1,6 persen #BersamaJuara Ridwan Kamil
+1628395828124557319 2023-02-22 14:06:34 +0000 &lt;rahmamamarah&gt; Ganjar Pranowo masih berada di puncak klasemen terkait tingkat elektabilitas calon presiden (capres) dalam survei yang dilakukan Litbang Kompas Januari 2023. Di bawah gubernur Jawa Tengah itu ada nama Prabowo Subianto dan Anies Baswedan. #BersamaJuara Ridwan Kamil
+1628395826946129921 2023-02-22 14:06:33 +0000 &lt;tempodotco&gt; Anies Baswedan Tegaskan Pilih Sistem Proposional Terbuka  https://t.co/1Lc8x7A7Qz #TempoNasional
+1628395727092355078 2023-02-22 14:06:10 +0000 &lt;Ronin_Setia&gt; @ch_chotimah2 @satriohendri @aniesbaswedan @ganjarpranowo @GunRomli @ferdinand_mpu Bener banget
+1628395649715834882 2023-02-22 14:05:51 +0000 &lt;ukicrysant&gt; LSI: AHY cawapres paling berpotensi menangkan Anies Baswedan.  AHY S14P #DemokratPimpinPerubahan  https://t.co/6psMJYSY13
+1628395636906405888 2023-02-22 14:05:48 +0000 &lt;WardhanaAndre&gt; @ezkisuyanto @aniesbaswedan @jokowi @AgusYudhoyono Ooh ini Bupati yg melarang perayaan Natal diwilayahnya ya? Bupati Intoleran, pendukung si P&#39;nies, sedangkan si P&#39;niesnya mati²an meng counter tuduhan intoleran terhadap dirinya. Sesama jenis memang bergaul, berkumpul dgn sejenisnya
+1628395632389140480 2023-02-22 14:05:47 +0000 &lt;ukicrysant&gt; Survei LSI, AHY Disebut Cawapres Paling Potensial Menangkan Anies Baswedan.  AHY S14P #DemokratPimpinPerubahan  https://t.co/evNj4v5oIJ
+1628395619827191808 2023-02-22 14:05:44 +0000 &lt;PKSJaksel&gt; Besok, PKS Deklarasi Resmi Anies Baswedan Capres 2024!  https://t.co/ux4BiHZpZY
+1628395615821647872 2023-02-22 14:05:43 +0000 &lt;adi461968&gt; @Gokusen77711126 @editya77 @aniesbaswedan .yg lebih besar dampaknya nebangin hutan buat nanem singkong,nebang hutan buat IKN, gali tanah buat ngeruk batubara,🙄🙄🙄
+1628395613556740097 2023-02-22 14:05:43 +0000 &lt;Quvvatt&gt; @dabenone2 @Chaves1305 @prabowo @aniesbaswedan Nah  Jejak digital memang amouh
+1628395581260570624 2023-02-22 14:05:35 +0000 &lt;ukicrysant&gt; Survei: AHY Cawapres Paling Kuat bagi Anies Baswedan.  AHY S14P #DemokratPimpinPerubahan  https://t.co/gXyZhahv4i
+1628395554492518400 2023-02-22 14:05:28 +0000 &lt;dabenone2&gt; @Chaves1305 @prabowo @aniesbaswedan  https://t.co/j1RkGYJAUH
+1628395496405622784 2023-02-22 14:05:15 +0000 &lt;yohanis_Yaman&gt; @sapasiap @Totok_Lotus @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan Suka puisi y... Posting puisi semua 🙏🤣
+1628395417456242689 2023-02-22 14:04:56 +0000 &lt;yohanis_Yaman&gt; @sapasiap @Totok_Lotus @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan 🤣🤣🤣
+1628395355300855809 2023-02-22 14:04:41 +0000 &lt;dabenone2&gt; @Chaves1305 @prabowo @aniesbaswedan Dora Marie Sigar - Wikipedia bahasa Indonesia, ensiklopedia bebas  https://t.co/yvRQrXzaN9  https://t.co/dE6QMk9FOp
+1628395351072980994 2023-02-22 14:04:40 +0000 &lt;Diem4sjaya&gt; @aniesbaswedan @Relawananies ini beneran ya?
+1628395321054343169 2023-02-22 14:04:33 +0000 &lt;dedifir30803641&gt; @riksayuda @ch_chotimah2 @aniesbaswedan @NasDem Percayalah PDIP sdh menang 2x pemilu tpi Presidenya &quot;hanya petugas partai, dan tentu akan aneh kalo sampai diteruskan penggantinya dari telunjuk tangan jokowi. kecuali gerbong revolusioner nya pada nyuara ga berlindung disosok pemersatu kebhinekaan pdip
+1628395244571209728 2023-02-22 14:04:15 +0000 &lt;r29719140&gt; @yudiwijayaa @putri_Aalona @aniesbaswedan Bg seandainya pun nyalon ga bakalan menang Palingan nyusep bg ,mau partai apa pun yang mengusung Nya,bisa menang pun terkecuali curang!!!
+1628395193807564803 2023-02-22 14:04:02 +0000 &lt;fair_n_just&gt; @aniesbaswedan Dulu menentang hutang. Sekarang mengemplang.  https://t.co/Sl70Z0moQb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628395189357391873 2023-02-22 14:04:01 +0000 &lt;SuhartoLaswi&gt; Tanpa baliho2, tanpa kampanye di Masjid2 karena cari yg gratis, tanpa menjual diri atau pencritaan kesana kemari hasil survei LITBANG KOMPAS, P Ganjar Pranowo yg paling tinggi, dibandingkan dgn Yohanes Anies Baswedan  yg jeblok
+1628395167966265350 2023-02-22 14:03:56 +0000 &lt;bianca125547620&gt; Berita  19 Februari  2023: Soal IKN jika terpilih presiden, Anies Baswedan: Kami fokus bangun manusianya  #JokowiLayakDimakzulkan  #JokowiLayakDimakzulkan  https://t.co/fZibNWhVEq
+1628395135062114305 2023-02-22 14:03:48 +0000 &lt;KaumReceh22&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono karakter ngk tau malu kok di contoh seh tante....wkwkwkwkwkw
+1628395037896884226 2023-02-22 14:03:25 +0000 &lt;lssxlf&gt; Kenapa berhenti pak @aniesbaswedan
+1628395018934427648 2023-02-22 14:03:21 +0000 &lt;mamabiasani&gt; @ch_chotimah2 @ganjarpranowo @aniesbaswedan beliau @aniesbaswedan pantas di sebud capres 2024 dunk khan udh dapet tiked nyapres, sedangkan GP gak ada partai yang mau usung kecuali psi meski kalian udh ribud survai survei
+1628394953738166272 2023-02-22 14:03:05 +0000 &lt;NurmansyahB_PD&gt; Badan Kontak Majelis Taklim BKMT Indonesia saat menyambut hangat kedatangan Anies Baswedan dan Agus Harimurti Yudhoyono (Anies-AHY) di Istora Senayan, Jakarta.  Antusiasme mereka untuk mewujudkan Perubahan dan Perbaikan Indonesia.  #DemokratS14P  https://t.co/hr0yCVjCrs
+1628394877989040129 2023-02-22 14:02:47 +0000 &lt;HasanBadru6&gt; @ch_chotimah2 @satriohendri @aniesbaswedan @ganjarpranowo @GunRomli @ferdinand_mpu Bung @Hensat kerreen..pengamat yg sangat realitis..👍👍  https://t.co/Kv5U8V5qHY
+1628394873173979139 2023-02-22 14:02:46 +0000 &lt;dabenone2&gt; @Chaves1305 @prabowo @aniesbaswedan Hashim: Hanya Fitnah Keji Sebut Prabowo Anti-Tionghoa   https://t.co/PnLSGcF6dZ  https://t.co/LRG6vVQziX
+1628394779112542208 2023-02-22 14:02:24 +0000 &lt;PatelangPither&gt; @NasDem @aniesbaswedan TOLAK Anies yohanies Baswedan TOLAK KHILAFAH ISIS HTI FPI PKS NASDRUN DEMOKRATDRUN DAN KOMUNISDRUN
+1628394751094554624 2023-02-22 14:02:17 +0000 &lt;MuryonoHS12&gt; @muuaacchhh1 @CutSarina5 @Chynthia_K @aniesbaswedan Hahaaa...ngacengan
+1628394633549213698 2023-02-22 14:01:49 +0000 &lt;FraksiPDKotaBdg&gt; Ketua Umum Partai NasDem, Surya Paloh menyatakan Ketua Umum Partai Demokrat, Agus Harimurti Yudhoyono alias AHY lebih dari pantas untuk jadi pendamping Anies Baswedan pada 2024.  #DemokratPimpinPerubahan  #FraksiDemokrat #AHYPimpinPerubahan  https://t.co/qOHqNAIbJM
+1628394541664587778 2023-02-22 14:01:27 +0000 &lt;ari_sup&gt; @f_fathur @aniesbaswedan @AgusYudhoyono lo logika tsb dipake, jmn ganjar nyagub pertama di jateng tuh siapa yg kenal ganjar di jateng, elektabilitas jg sgt minim, tp menang
+1628394485637079040 2023-02-22 14:01:14 +0000 &lt;yohanis_Yaman&gt; @Totok_Lotus @sapasiap @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan Udh y
+1628394448848834560 2023-02-22 14:01:05 +0000 &lt;yohanis_Yaman&gt; @sapasiap @Totok_Lotus @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan 🤣
+1628394396067713024 2023-02-22 14:00:52 +0000 &lt;illness_dd3&gt; @Nurulkjo1 @sebelpuyeng @aniesbaswedan @airakitchen @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Haha... 🤭
+1628394318854778880 2023-02-22 14:00:34 +0000 &lt;m_natsirdmokrat&gt; Surya Paloh Sebut AHY Pantas Jadi Cawapres  2024 dari Koalisi Perubahan, Tapi Tergantung Anies Baswedan  https://t.co/QeYv2Ca4pe
+1628394227918073856 2023-02-22 14:00:12 +0000 &lt;illness_dd3&gt; @sebelpuyeng @aniesbaswedan @airakitchen @Nurulkjo1 @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Ga ada yg ndaftar.... 🤭🤭
+1628394216849297412 2023-02-22 14:00:10 +0000 &lt;ukicrysant&gt; Pengamat: Anies Baswedan Akan Sepakat Gandeng AHY Pada Pilpres 2024.  AHY S14P #DemokratPimpinPerubahan  https://t.co/oPFGnpF8jw
+1628394086968471555 2023-02-22 13:59:39 +0000 &lt;AhooiWkz&gt; @aniesbaswedan Itu acara majelis taklim, bukan konser... knp musti pegang tangan, tozz,, salaman dg dg bukan mahrom ?
+1628394083650793474 2023-02-22 13:59:38 +0000 &lt;Cembok1&gt; @aniesbaswedan Tu nies maha karya ente mau dimatiin tu  https://t.co/1ZKDQ6xHdI
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628394066647080962 2023-02-22 13:59:34 +0000 &lt;adi_adi02115829&gt; @AkuAtikaFaya @NasDem @aniesbaswedan Goblok aja , saat jadi Cagub Ngutang Puluhan Milyar masih di Usung tuk Capres, mungkin sekarang udah Ngutang lagi,  Hasil ga seberapa Kelebihan Bayar dimana²
+1628393965182681088 2023-02-22 13:59:10 +0000 &lt;ukicrysant&gt; AHY Layak Dampingi Anies Baswedan di Pilpres 2024 mendatang✊.  AHY S14P #DemokratPimpinPerubahan  https://t.co/T43eA9VmyB
+1628393943867232257 2023-02-22 13:59:04 +0000 &lt;botwvinnik&gt; @Joker_Wedoks @GunawanAryaPutr @DKIJakarta @aniesbaswedan Dia pikir dengan membual bisa jadi pleciden
+1628393937227632641 2023-02-22 13:59:03 +0000 &lt;ukicrysant&gt; Mas AHY Tokoh paling banyak dibicarakan sebagai Cawapres Anies Baswedan 🥰.  AHY S14P #DemokratPimpinPerubahan  https://t.co/USIVTDThaj
+1628393902079348737 2023-02-22 13:58:55 +0000 &lt;ukicrysant&gt; Gaspoll Pak Anies Baswedan!!! Mas AHY sudah pas! ✊✊✊.  AHY S14P #DemokratPimpinPerubahan  https://t.co/2Xxy48jVL8
+1628393899936067628 2023-02-22 13:58:54 +0000 &lt;aanandi96146004&gt; Ketua Umum Partai NasDem, Surya Paloh menyatakan Ketua Umum Partai Demokrat, Agus Harimurti Yudhoyono alias AHY lebih dari pantas untuk jadi pendamping Anies Baswedan pada 2024.   #DemokratPimpinPerubahan  #AHY  https://t.co/5JOGvdbAsz
+1628393886396866562 2023-02-22 13:58:51 +0000 &lt;ebe_ganzo&gt; Hello @aniesbaswedan selamat malam semoga malam ini bpk selalu sehat, oh ya pak ini ada foto sepertinya pelukannya rapat banget aseeeeeek jreeeeeeng nyooooos bpk tau aja 🤪🤪🤪🤪  https://t.co/0GE5lxYwjA
+1628393799117602817 2023-02-22 13:58:30 +0000 &lt;alisyarief&gt; @Djumjum1 @aniesbaswedan tinggal komitmen negara
+1628393791580426240 2023-02-22 13:58:28 +0000 &lt;TaniusWir&gt; Mahfud MD Yakin Anies Baswedan Tidak akan Jadi Presiden Indonesia Selanjutnya, Alasannya Ternyata…  https://t.co/oowtwkXRbz
+1628393759972130816 2023-02-22 13:58:21 +0000 &lt;Belok_dong&gt; @Sotoy08 @aniesbaswedan Kliatan
+1628393720042364930 2023-02-22 13:58:11 +0000 &lt;Aniesprsdn2024&gt; @rahmansandre Pak Anies Baswedan pilihan rakyat Indonesia pemimpin yang baik dan cerdas presiden di tahun 2024
+1628393698106175488 2023-02-22 13:58:06 +0000 &lt;sensus_888&gt; Anies Baswedan : kalo ada yang mengkritik tidak perlu dilaporkan  Bewwwwww mantap..  https://t.co/VKmEGWc9vg
+1628393670637654016 2023-02-22 13:57:59 +0000 &lt;_Goentoer_&gt; Siapa bilang partai @NasDem terdongkrak oleh bapak politik identitas ini @aniesbaswedan
+1628393656171495425 2023-02-22 13:57:56 +0000 &lt;HasanBadru6&gt; @RudyMarrist @ch_chotimah2 @satriohendri @aniesbaswedan @ganjarpranowo @GunRomli @ferdinand_mpu Anda bani kullup bkn?
+1628393642556809216 2023-02-22 13:57:53 +0000 &lt;Sotoy08&gt; @Belok_dong @aniesbaswedan Belom waras
+1628393599791677440 2023-02-22 13:57:42 +0000 &lt;PINJOLBIADAB&gt; @en_jeu_L @aniesbaswedan  https://t.co/M7cTMH9FJM
+1628393497496793089 2023-02-22 13:57:18 +0000 &lt;mustcho_55555&gt; @Hartati44247904 @jokowi @aniesbaswedan @erickthohir @prabowo @AgusYudhoyono @mohmahfudmd @ganjarpranowo eeeemmmm....  https://t.co/5CrQG4KHWy
+1628393435324628992 2023-02-22 13:57:03 +0000 &lt;kamillinsan68&gt; Inshaallah @AgusYudhoyono dan @aniesbaswedan Pimpin #PerubahanDanPerbaikan untuk bangsa indonesia  https://t.co/7TbcTXHky6
+1628393404542627846 2023-02-22 13:56:56 +0000 &lt;PINJOLBIADAB&gt; @en_jeu_L @ganjarpranowo @PSubianto @aniesbaswedan  https://t.co/ujoSTlkTNE
+1628393388130328576 2023-02-22 13:56:52 +0000 &lt;Belok_dong&gt; @Sotoy08 @aniesbaswedan Kata dia sendiri
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628393387207573504 2023-02-22 13:56:52 +0000 &lt;Yha2n3&gt; @Mdy_Asmara1701 @aniesbaswedan @AgusYudhoyono Paling pengusung PKI syar&#39;i ini  https://t.co/iRMi9FHMXq
+1628393288494612480 2023-02-22 13:56:28 +0000 &lt;UmaSpriadi&gt; @Hasbil_Lbs @aniesbaswedan @AgusYudhoyono Muda adalah kekuatan,.. Bung Karno pernah meminta 10 orang pemuda untuk ia mengguncang dunia. Karena pemuda energik dan penuh gagasan serta inovasi. Dan sejarah telah membuktikan dengan lahirnya sumpah pemuda yg menyatukan anak bangsa.
+1628393277568483335 2023-02-22 13:56:26 +0000 &lt;BambangMali4&gt; @NasDem @aniesbaswedan Sampah
+1628393269842554880 2023-02-22 13:56:24 +0000 &lt;k_sudro&gt; @BambangSuharto @WagimanDeep212_ @aniesbaswedan Iya linuwih dgn cara memanfaatkan dan mendompleng kemulyaan para Habaib utk memaksakan mendirikan partai Arab,padahal masih ada yg lebih linuwih yakni Habib Mutohar dan radèn Saleh yg justru beliau tdk membanggakan ke araban dan kehabibannya,dan beliaulah pahlawan bangsa sejati..
+1628393247851806720 2023-02-22 13:56:19 +0000 &lt;ArdoGoenawan&gt; @petruspasaribuu @aniesbaswedan Ajib kan dana APBD 440M gw pake buat ngerusak infrastruktur yang membahayakan keselamatan pengguna jalan KPK aje Diam seribu bahasa Bong 🤣😛  https://t.co/5S350J3FJv
+1628393240931225602 2023-02-22 13:56:17 +0000 &lt;MWAHYUDDINAZIZ7&gt; @aniesbaswedan InsyaAlloh tidak jadi presiden
+1628393240889294850 2023-02-22 13:56:17 +0000 &lt;KartiniNKRI&gt; @Jazz24632 @aniesbaswedan 😃😃😃
+1628393137860390913 2023-02-22 13:55:52 +0000 &lt;John94623247&gt; @ekowboy2 Anies Baswedan RI-1 Amanah
+1628393027399225345 2023-02-22 13:55:26 +0000 &lt;Sotoy08&gt; @Belok_dong @aniesbaswedan Kata siapa?
+1628392947837468672 2023-02-22 13:55:07 +0000 &lt;Bintang76288009&gt; @widarto63285827 @aniesbaswedan @musniumar @bachrum_achmadi @tatakujiyati @AndiSinulingga @yusuf_dumdum @NgkongRoses @_RiuRizkiUtomo @YaqutCQoumas @addiems @Umar_Hasibuan__ @HermanLanang86 @AnakTangsiAD  https://t.co/k3rQCbOlN8
+1628392864375013378 2023-02-22 13:54:47 +0000 &lt;FirmansahRiski&gt; @DokterTifa Yang bela @aniesbaswedan lebih goblok lagi ,yang parahnya lebih kencang pake otot daripada pake otak
+1628392821836365825 2023-02-22 13:54:37 +0000 &lt;SorayaRahman58&gt; @EllyKoro @aniesbaswedan @NasDem @PKSejahtera 😝📣
+1628392809396060160 2023-02-22 13:54:34 +0000 &lt;ukicrysant&gt; Pak @aniesbaswedan bicara soal AHY @AgusYudhoyono.  AHY S14P #DemokratPimpinPerubahan  https://t.co/iBgCIeBJgg
+1628392742517870593 2023-02-22 13:54:18 +0000 &lt;ukicrysant&gt; Mas AHY di mata @aniesbaswedan 😍.  AHY S14P #DemokratPimpinPerubahan  https://t.co/8MzIMcpWos
+1628392736423550981 2023-02-22 13:54:17 +0000 &lt;dpc_PDmbd&gt; Pandangan Anies Baswedan terkait sosok AHY begitu lugas, jernih, dan objektif. #DemokratPimpinPerubahan AHY S14P  https://t.co/rdMojT3802
+1628392720686538752 2023-02-22 13:54:13 +0000 &lt;ekowboy2&gt; Besok 23/02/2023, Majlis Syura PKS Deklarasi Resmi Anies Baswedan  Selamat Datang PERUBAHAN.. Bismillah Anies presiden 2024 🤲  https://t.co/z0U0p7l2W1
+1628392718681640960 2023-02-22 13:54:12 +0000 &lt;Dhonykurniawan9&gt; @NasDem  @aniesbaswedan  @abu_waras  @Relawananies  @BosPurwa  @bos_sir @satriohendri   @musniumar
+1628392699924733954 2023-02-22 13:54:08 +0000 &lt;AuntyNovi1978&gt; @emhamka08 @Kosim__ @AdjiEins @DarekaRendy @Kimberley_20102 @LordDoel___ @are_inismyname @prabowo @azissubekti @BANGSAygSUJUD @bengkeldodo @Gerindra @jatmiko99604253 Untuk kubu Yohanes Anies Baswedan ini bahan kalian untuk menyerang Pak Prabowo..minum tidak sesuai sunah🤣🤣🤣 Tapi kalian lupa mencaci, menghujat, menghina itu dilarang di Al-Qur&#39;an
+1628392698205065216 2023-02-22 13:54:07 +0000 &lt;kadrunophobia&gt; @aniesbaswedan  @Mdy_Asmara1701  @marlina_idha  @msaid_didu  @HelmiFelis_  @Muhammad_Saewad  @Tan_Mar3M  @abu_waras  @musniumar  @panca66  @alisyarief  @AndiSinulingga  @bachrum_achmadi  Kui rungoke mbah RR ya ??? 🤭🤣
+1628392679125192704 2023-02-22 13:54:03 +0000 &lt;MarhanisSalean2&gt; @SahLeoSin @marlina_idha @aniesbaswedan @AgusYudhoyono Itu namanya pembalakan liar .....
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628392678705754112 2023-02-22 13:54:03 +0000 &lt;EllyKoro&gt; @SorayaRahman58 @aniesbaswedan @NasDem @PKSejahtera 😃😃
+1628392655205052418 2023-02-22 13:53:57 +0000 &lt;WicahyoSigit&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono  https://t.co/dC4LkHDEtq
+1628392647558832131 2023-02-22 13:53:55 +0000 &lt;ukicrysant&gt; Dukungan terus mengalir untuk AHY menjadi Cawapres Anies Baswedan..  AHY S14P #DemokratPimpinPerubahan  https://t.co/ZHvbUVpPyc
+1628392605661728772 2023-02-22 13:53:45 +0000 &lt;Gokusen77711126&gt; @adi461968 @editya77 @aniesbaswedan  https://t.co/UE0X96By6j
+1628392502352039936 2023-02-22 13:53:21 +0000 &lt;pejuangnkri77&gt; @aniesbaswedan Rakyat Bersatu lawan Oligarki Selamatkan Indonesia Anies Presiden RI 2024
+1628392461759561728 2023-02-22 13:53:11 +0000 &lt;HudzaBochil&gt; @Djumjum1 @alisyarief @aniesbaswedan urusan paling gampang itu &quot;ngomong&quot; yang sulit itu praktek dilapangan di negeri ini memang segudang yang ahli dan pinter yang sedikit di negeri ini orang bener
+1628392434567905286 2023-02-22 13:53:05 +0000 &lt;tempodotco&gt; Anies Baswedan Pastikan Hadiri Rakernas PKS Besok  https://t.co/YqbnOve3nH #TempoNasional
+1628392391886651395 2023-02-22 13:52:54 +0000 &lt;Belok_dong&gt; @aniesbaswedan Oh udah waras?
+1628392369719750656 2023-02-22 13:52:49 +0000 &lt;John94623247&gt; @GeiszChalifah Anies Baswedan RI-1 Amanah
+1628392327378251776 2023-02-22 13:52:39 +0000 &lt;AebanAlie&gt; @linda_gunawan @hervanka @aniesbaswedan Konsep dan ide beliau di pakai oleh bbrp organisasi dan beliau punya hak royalti di sana, jadi bukan pengangguran ya bu..suami nya punya ide dan konsep yg bisa di pakai gak? klo ada sok atuh di tawarin siapa tau ada yg beli🤭
+1628392294771720192 2023-02-22 13:52:31 +0000 &lt;HendrikGara&gt; @ch_chotimah2 @aniesbaswedan @NasDem @pandji 😁😄  https://t.co/EDbwWeaVFg
+1628392287326838786 2023-02-22 13:52:30 +0000 &lt;TeguhSudarisman&gt; @DaltonSembiring @G336387 @AndiSinulingga @aniesbaswedan 🤣🤣🤣🤣  https://t.co/lOYlcLzEIa
+1628392287167459328 2023-02-22 13:52:29 +0000 &lt;joni_kemot1&gt; @IsoWira @satriohendri @aniesbaswedan Kok narasinya selalu menggembosi ya, sebenernya menggembosi ini gimana sih, teknisnya seperti apa
+1628392175645097984 2023-02-22 13:52:03 +0000 &lt;dis_alkena&gt; @aniesbaswedan oh
+1628392154992361472 2023-02-22 13:51:58 +0000 &lt;sebelpuyeng&gt; @illness_dd3 @aniesbaswedan @airakitchen @Nurulkjo1 @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Bukaan pertama terlalu tinggi mungkin,jadi yg mo nawar Atut dulu 🤪
+1628392142573015041 2023-02-22 13:51:55 +0000 &lt;ukicrysant&gt; Pandangan Anies Baswedan terkait sosok AHY begitu lugas, jernih, dan objektif..  AHY S14P #DemokratPimpinPerubahan  https://t.co/Jc0EKP4wmn
+1628392130573144065 2023-02-22 13:51:52 +0000 &lt;STresnowat1&gt; @AddyDapizz @aniesbaswedan 👍👍👍
+1628392049287507970 2023-02-22 13:51:33 +0000 &lt;Dhonykurniawan9&gt; @aniesbaswedan , @NasDem  @abu_waras  @musniumar  @Relawananies  @BosPurwa   @bos_sir
+1628391921990385664 2023-02-22 13:51:02 +0000 &lt;illness_dd3&gt; @sebelpuyeng @aniesbaswedan @airakitchen @Nurulkjo1 @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Ra payu, santuy mas 😊😊
+1628391884703014914 2023-02-22 13:50:54 +0000 &lt;OpRafael&gt; @aniesbaswedan 😃😃😃😃😃 karakter dan kinerja orang tuh nggak bisa berubah hanya hitungan hari !
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628391884052897792 2023-02-22 13:50:53 +0000 &lt;Tumpakfeterson&gt; @AkuAtikaFaya @NasDem @aniesbaswedan Rekam jejak orang goblog buat apa?
+1628391790494781440 2023-02-22 13:50:31 +0000 &lt;Aniesprsdn2024&gt; @hnurwahid @PKSejahtera Alhamdulillah semoga Allah SWT selalu memberikan kemudahan dan kelancaran untuk bangsa Indonesia tercinta ini Aamiin Yaa Robbal Alamin 🤲🤲🤲🤲🤲  Pak Anies Baswedan pilihan rakyat Indonesia pemimpin yang baik dan cerdas presiden di tahun 2024
+1628391779769929728 2023-02-22 13:50:29 +0000 &lt;mustofa_sadli&gt; @Lembayung071 @ekowboy2 @musniumar @tatakujiyati @aniesbaswedan Up
+1628391667425480704 2023-02-22 13:50:02 +0000 &lt;WartaEkonomi&gt; Elektabilitas Partai Pengusung Anies Baswedan: NasDem Naik, Demokrat dan PKS Turun!  https://t.co/KPE5K3VpKr
+1628391656851673088 2023-02-22 13:49:59 +0000 &lt;GengkiIshak&gt; @ardanrama71 @detikcom @aniesbaswedan Klu kalian percaya sama hasil survey tak usah pada nyinyirin Anis,  terus nyuruh KPK utak atik Formula E, suruh Bawaslu tegor Anis...berarti lu juga kagak yakin sama hasil surveynya...
+1628391646395248648 2023-02-22 13:49:57 +0000 &lt;Totok_Lotus&gt; @sapasiap @yohanis_Yaman @KPK_RI @PPATK @bpkri @mohmahfudmd @aniesbaswedan Demi ambisi bro @sapasiap  Fb donk. 🙏
+1628391590317395969 2023-02-22 13:49:43 +0000 &lt;Catuk4&gt; @hnurwahid @PKSejahtera Terima kasih, kami berharap banyak untuk keadilan dan keutuhan bangsa bersama Pak @aniesbaswedan. Beliau sdh terbukti mengayomi semua golongan.
+1628391566607024129 2023-02-22 13:49:38 +0000 &lt;Rin_niswa&gt; @RagilSemar Ternyata pak @aniesbaswedan suka banget peluk2 yg bukan mukhrim.🤦 @PKSejahtera apa tdk menasehati. Waktu nonton konser dewa 19, istrinya gak diajak. Tokoh politik yg ngajak istri di konser dewa 19 cuma @AgusYudhoyono.
+1628391541055320065 2023-02-22 13:49:32 +0000 &lt;tentaralangit99&gt; @Metro_TV @aniesbaswedan + @AgusYudhoyono Pasangan Ideal Dijaman Milenial yg serba berubah cepat,Indonesia butuh konseptor dan eksekutor cepat
+1628391522898165765 2023-02-22 13:49:27 +0000 &lt;Djumjum1&gt; @alisyarief @aniesbaswedan Betul pak,semoga pak anis mau baca tulisan kita,😁ini sangat serius kl soal lapar🤕 Bahkan soal pupuk yg sekarang jdi momok pun bisa di atasi dngn yg organik,bahan&quot;nya sngt banyak di sekitaran kita,🙏
+1628391471643561984 2023-02-22 13:49:15 +0000 &lt;wicaks_kun&gt; @aniesbaswedan Sekarang emang ga main politik identitas lagi?
+1628391445983014912 2023-02-22 13:49:09 +0000 &lt;DeepBlackCoffee&gt; @alisyarief Tolol... Mana pernah Jokowi mengklaim dirinya sbg Tokoh Reformasi 1998..  Temen loe si @ekowboy2 yg bilang @aniesbaswedan tokoh reformasi 98. Kalian berdua sama Begonya...
+1628391443076354048 2023-02-22 13:49:08 +0000 &lt;Wahyudi87677017&gt; DASAR CAPRES KANG TIPU.... @putrisakera  @abahnajmi  @alisyarief  @AndiSinulingga  @aniesbaswedan  @Harsarchjazz1  @tatakujiyati  @Tan_Mar3M  @marlina_idha
+1628391419512754176 2023-02-22 13:49:03 +0000 &lt;DadBorneo&gt; @marlina_idha @aniesbaswedan @AgusYudhoyono Marlin, kamu ngerti arti Istiqomah nggak? Makin tua kamu makin peyot, eh lutchuuuuu🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣
+1628391393151578114 2023-02-22 13:48:56 +0000 &lt;DaltonSembiring&gt; @TeguhSudarisman @G336387 @AndiSinulingga @aniesbaswedan Menjijikkan, to be precise. Penipu, pembohong, tidak punya raihan kinerja, menjudikan pilkada DKI 50 sampai 92 Milyar, pengemplang hutang ke Uno, Bapak politik identitas dan manusia tak tau malu. Paripurna lah sisi negative junjungannya  https://t.co/UFYeHdgGRU
+1628391381411545091 2023-02-22 13:48:54 +0000 &lt;combatandabo72&gt; Masyarakat ingin Duet Anies Baswedan - AHY di 2024 #DemokratPimpinPerubahan AHY S14P  https://t.co/FAl8Qf6QfP
+1628391223202566146 2023-02-22 13:48:16 +0000 &lt;jonsa61664335&gt; @aniesbaswedan Benar bahwa wawasan pemimpin cerdas harus begerak dinamis, berubah menjadi lebih benar, amanah, mampu mewujudkan rasa keadilan dlm keputusannya. Anies sangat cocok menjadi Presiden RI yg insyaallah menang pd pilpres 14/02/2024, aamiin
+1628391222296592384 2023-02-22 13:48:16 +0000 &lt;Fredi1234537890&gt; @aniesbaswedan Sama saja 🤣🤣🤣🤣  https://t.co/2NZfnvCjkX
+1628391094651351041 2023-02-22 13:47:45 +0000 &lt;andiebs&gt; @Relawananies senengnya pak @aniesbaswedan diajak jalan terus
+1628391091006480387 2023-02-22 13:47:44 +0000 &lt;DanielSentanu&gt; Ga Usah Bahas SARA Semua Yg Lahir Dan Ber Akta Indonesia Adalah Warga Negara Indonesia  Baca Lagi UU No 12 Tahun 2006 Bapak @prabowo &amp;amp; Bapak @aniesbaswedan Orang Indonesia, Orang2 Di Sekitarnya Yg Membikin Gaduh Narasi2 Yg Buruk &amp;amp; Berlindung Atas Nama Ke Duanya ✍️
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628391077903499265 2023-02-22 13:47:41 +0000 &lt;Korintushudian2&gt; @aniesbaswedan Lagu Dewi Yul
+1628391072740278273 2023-02-22 13:47:40 +0000 &lt;ALKaRZ_5&gt; @aniesbaswedan Pak Anis adalah sosok yg dirindukan rakyat Indonesia.  Sebagai seorang tokoh pemersatu dari perpecahan yg telah terjadi selama 8th terahir.  I ❤ Anis #AnisPresiden2024  https://t.co/m206xIH1z3
+1628391056189583361 2023-02-22 13:47:36 +0000 &lt;Raju89755360&gt; @aniesbaswedan Alhamdulillah..... Ini ibu² majlis ta&#39;lim sebenarnya, di tempat yang sama pernah ada ibu² diajak kumpul dengan judul pengajian gak taunya dangdutan.  Semoga Allah SWT. Meridhoi Bapak Anies Rasyid Baswedan menjadi Presiden Indonesia.  Aamiin Yaa Robbal&#39;alamiin 🤲🤲🤲
+1628391002896728065 2023-02-22 13:47:23 +0000 &lt;Hen_Wijaya_&gt; @ch_chotimah2 @aniesbaswedan Sdh pernah kesini belum loe...👇  https://t.co/MAu1pR2aTr
+1628390817726603264 2023-02-22 13:46:39 +0000 &lt;SorayaRahman58&gt; @EllyKoro Ga kepilih jadi Presiden juga gpp ya Pak @aniesbaswedan kan Udah Kenyang Keliling Indonesia Minimal atau Setidaknya Pernah berlakon Presiden2 nan @NasDem @PKSejahtera
+1628390798432800769 2023-02-22 13:46:35 +0000 &lt;warenk71853443&gt; @ajengcute16__ @aniesbaswedan @AgusYudhoyono emak2 kader dari  pks demokrat nasdem 🤣🤣🤣🤣🤣🤣🤣
+1628390766266699776 2023-02-22 13:46:27 +0000 &lt;riksayuda&gt; Diobral keliling sana sini.. merasa hebat kibulin orang,  &quot;liat rekam jejak&quot; padahal ngibul ..... gak sadar amal amalan di jakarta cuma nyampah ... khawatirnya saja nanti ........ @aniesbaswedan @Nasdem ........AWAS EDIANNnn !!!
+1628390730984206336 2023-02-22 13:46:18 +0000 &lt;sebelpuyeng&gt; @illness_dd3 @aniesbaswedan @airakitchen @Nurulkjo1 @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Maju terus dong !!! Ihhh,masa melempem dan pesimis gitoh 😀
+1628390654924697601 2023-02-22 13:46:00 +0000 &lt;anto_cahaya&gt; @aniesbaswedan Haha. Tak akan bisa menghapus rekam jejak dan fakta cuma dgn video Anda.
+1628390652928208896 2023-02-22 13:46:00 +0000 &lt;mat_krewuk&gt; @AkuAtikaFaya @NasDem @aniesbaswedan Gak bakalan nemuin rekam jejak manusia jadi-jadian 😂😂😂
+1628390647307845645 2023-02-22 13:45:59 +0000 &lt;ferisaragi1&gt; Borok JIS karya kebanggaan Anies Baswedan.  https://t.co/7a2zSXpq9O
+1628390594962931716 2023-02-22 13:45:46 +0000 &lt;andiebs&gt; @Catuk4 @hnurwahid @PKSejahtera @aniesbaswedan sudah kok
+1628390526251565058 2023-02-22 13:45:30 +0000 &lt;sumbawanews&gt; Anies Baswedan: Insyaallah Besok Saya Datang ke Deklarasi Capres PKS  https://t.co/7LjvJDzQEe
+1628390408836513792 2023-02-22 13:45:02 +0000 &lt;WartaEkonomi&gt; Anies Baswedan Effect! Elektabilitas NasDem Naik, Bagaimana dengan PKS dan Demokrat?  https://t.co/2OpCIIsA33
+1628390373356867584 2023-02-22 13:44:53 +0000 &lt;alisyarief&gt; @Djumjum1 @aniesbaswedan Bukan hal yg sulit; tanah luas, kemampuan punya, pengalaman ada, cuaca mendukung, ahlinya segudang
+1628390333624221696 2023-02-22 13:44:44 +0000 &lt;nerynaltien73&gt; @en_jeu_L @aniesbaswedan @Fahrihamzah Yaman pekok...🤣
+1628390223297273856 2023-02-22 13:44:17 +0000 &lt;yazid_fadhlan&gt; @Hasbil_Lbs @aniesbaswedan @AgusYudhoyono Lihat rekam jejak saja...  1. Cukong reklamasi n antek2 di libas.  2. Pendekatan beliau utk  kepulauan seribu cocok buat nkri yg jg byk kepulauan.  3. Holiwing berulah lansung d sikat
+1628390191848386562 2023-02-22 13:44:10 +0000 &lt;nerynaltien73&gt; @dodydod23863152 @en_jeu_L @aniesbaswedan @Fahrihamzah Orang yaman togog lu bela..🤣🤣
+1628390182436372482 2023-02-22 13:44:08 +0000 &lt;wa_one1&gt; @Hasbil_Lbs @aniesbaswedan @AgusYudhoyono Ke 22nya cerdas dan shaleh...dari 2 generasi yg berbeda.
+1628390165847883779 2023-02-22 13:44:04 +0000 &lt;widarto63285827&gt; Masyarakat Samarinda tertipu, kirain acara jalan sehat eeh ternyata ada @aniesbaswedan pawang doorprize sedang kampanye gelap @bojonebojoku @AnakTangsiAD @NgkongRoses @_RiuRizkiUtomo @alextham878 @HermanLanang86 @lhayesno @03__nakula @TJHoois @Azhar_k18  https://t.co/v3UhWzfQDo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628390134864568321 2023-02-22 13:43:56 +0000 &lt;illness_dd3&gt; @sebelpuyeng @aniesbaswedan @airakitchen @Nurulkjo1 @kusewaku @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Ttg konsultasinya. Aq bkn co idaman, ga enak diajak ngobrol dan kurang berikan dukungan ke ce ce.  Ttg Anies nya  Ortu nya dua²nya dosen di UII Yk. Anies alumnus SMA2 Yk, sekolah keren tuh. Trus di FE UGM, jg jelas jg keren.  Bravo Anies, bravo Jogja  https://t.co/6NbrtNoHN9
+1628390093500325888 2023-02-22 13:43:46 +0000 &lt;Budihar21525608&gt; @ch_chotimah2 @aniesbaswedan Entah sudah berapa kali aku follow, sekali ini fb lagi ya mbak. Terimakasih
+1628390060793163777 2023-02-22 13:43:39 +0000 &lt;0nc075&gt; @alisyarief @RinaShaqueena @Dahnilanzar @aniesbaswedan Capres kok berharap dukungan dari presiden. Gak logik. 😀
+1628390053943865345 2023-02-22 13:43:37 +0000 &lt;sebelpuyeng&gt; @kusewaku @aniesbaswedan @illness_dd3 @airakitchen @Nurulkjo1 @handajani23 @ryandeui123 @_melody_mellow @MariaAlcaff Cinta segelas kopi 💪❤️☕👋
+1628390016367099904 2023-02-22 13:43:28 +0000 &lt;mumungwisnu_1&gt; Katanya bangun kesetaraan ?? Gimana sih @aniesbaswedan nih ?? Cc : @nasdem, @PKSejahtera, @PDemokrat, @aniesfor2024, @faktaanies, @Garnies_ID, @JarnasABW, @LANGKAHANIES, @ManiaAnies, @Relawananies, @S0BATANIES, @SAHABATAnies1, @musniumar, @marlina_idha, @ekowboy2, @AndiSinulingga
+1628389877749538817 2023-02-22 13:42:55 +0000 &lt;PenaKecil_Wiwin&gt; @aniesbaswedan  https://t.co/aboYgjJJWF klw g ini masih inget kan ya? 😂😂
+1628389872460525569 2023-02-22 13:42:54 +0000 &lt;BogdanoffReal&gt; @aniesbaswedan Hari pertama bapak menjabat nanti tolong langsung kasih kabar gaji guru sedang direncanakan naik.
+1628389809281712128 2023-02-22 13:42:39 +0000 &lt;adi461968&gt; @Gokusen77711126 @editya77 @aniesbaswedan Loe gobloknya makin paripurna ya...loe cari dalam kampanye atau apapun kegiatan dia yg bisa loe dpt dia ngajak org islam milih dia karena alesannya dia islam..loe ajak mbah google sekalian bantu loe. Kerja2 kerja. Yg ada rakyat dikerjai, bbm naik,pajak naik,bpjs naek,listrik naik
+1628389805804634114 2023-02-22 13:42:38 +0000 &lt;Djumjum1&gt; Hanya satu permintaan sy ke pak @aniesbaswedan ,jika nanti dpt mandat dri rakyat,tolong jadikan indonesia lumbung pangan dunia,krn urusan isi perut itu sudah jdi permasalahan dri dahulu kala,fokus pertanian ini kunci No.1🙏🙏
+1628389707691487232 2023-02-22 13:42:14 +0000 &lt;budikim5317&gt; @aniesbaswedan Mohon bantuan dan dukungan team GempurNet89...... Dalam memperjuangkan dana member dalam kasus NET89 yg telah membuat ratusan ribu member menderita.....   Semoga oknum PT. SMI dan para kroninya yg sudah ditetapkan status tersangka cepat diproses sesuai hukum yg berlaku.
+1628389592037740544 2023-02-22 13:41:47 +0000 &lt;PenaKecil_Wiwin&gt; @Thiyangpundi78 @aniesbaswedan Itu tugas gubernur songong, masak air suruh parkir. 😂
+1628389514057232385 2023-02-22 13:41:28 +0000 &lt;TeguhSudarisman&gt; @DaltonSembiring @G336387 @AndiSinulingga @aniesbaswedan 🤣🤣🤣🤣  https://t.co/chOU0xBw6C
+1628389502350950400 2023-02-22 13:41:26 +0000 &lt;pajjala&gt; @Nicaragu417 @aniesbaswedan bisa gile die🤣
+1628389416166395906 2023-02-22 13:41:05 +0000 &lt;Wesly_Arfan&gt; @aniesbaswedan Pak, malu Pak
+1628389330438991875 2023-02-22 13:40:45 +0000 &lt;InongMarina&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628389312458031104 2023-02-22 13:40:40 +0000 &lt;InongMarina&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628389304694353921 2023-02-22 13:40:38 +0000 &lt;InongMarina&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628389297249480704 2023-02-22 13:40:37 +0000 &lt;sena_soetta&gt; @aniesbaswedan  https://t.co/9rtChwZCN1
+1628389296020529153 2023-02-22 13:40:36 +0000 &lt;KopiDe5&gt; @geloraco Pak @aniesbaswedan mana ini sih...kok jd berantakan DKI nya
+1628389263963484160 2023-02-22 13:40:29 +0000 &lt;EddoPurnama&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628389246536134657 2023-02-22 13:40:25 +0000 &lt;EddoPurnama&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628389239422611460 2023-02-22 13:40:23 +0000 &lt;EddoPurnama&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628389194602274816 2023-02-22 13:40:12 +0000 &lt;bedhi_arino&gt; @C_Rangkito @aniesbaswedan Keliatan sangat menikmati bingit
+1628389191968247813 2023-02-22 13:40:12 +0000 &lt;ZainalPras&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628389176625463297 2023-02-22 13:40:08 +0000 &lt;ZainalPras&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628389169390313472 2023-02-22 13:40:06 +0000 &lt;ZainalPras&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628389123504615426 2023-02-22 13:39:55 +0000 &lt;AyaNayyaya&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628389120975462400 2023-02-22 13:39:55 +0000 &lt;andiebs&gt; @MaulidyaAmirud1 @Mdy_Asmara1701 yg penting anget anget empuk ya pak @aniesbaswedan
+1628389105645268993 2023-02-22 13:39:51 +0000 &lt;AyaNayyaya&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628389102549876736 2023-02-22 13:39:50 +0000 &lt;budikim5317&gt; @aniesbaswedan  Mohon bantuan dan dukungan team GempurNet89...... Dalam memperjuangkan dana member dalam kasus NET89 yg telah membuat ratusan ribu member menderita.....   Semoga oknum PT. SMI dan para kroninya yg sudah ditetapkan status tersangka cepat diproses sesuai hukum
+1628389098301042688 2023-02-22 13:39:49 +0000 &lt;AyaNayyaya&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628389038586736640 2023-02-22 13:39:35 +0000 &lt;rahmamamarah&gt; Litbang Kompas juga merilis survei skema capres alternatif berdasarkan pemilih Anies, Ganjar dan Prabowo (Januari 2023). Pemilih Anies Baswedan : Tidak Tahu: 24,7% ; Prabowo Subianto: 17,7% ; Ridwan Kamil: 16,5% ; Ganjar Pranowo: 13,3% ; Agus Harimurti Y. : 8,9% #BersamaJuara
+1628389036774789121 2023-02-22 13:39:35 +0000 &lt;aryadwipanggak1&gt; @andiebs @Mdy_Asmara1701 @aniesbaswedan 🙄😏🙃
+1628389020865818629 2023-02-22 13:39:31 +0000 &lt;rahmamamarah&gt; Dalam survei Litbang Kompas pada periode Januari 2023, tiga tokoh menguasai papan elektabilitas calon presiden yaitu Ganjar Pranowo, Prabowo Subianto dan Anies Baswedan. Di sisi lain, muncul sederet figur lain yang dinilai layak didukung menjadi capres. #BersamaJuara Ridwan Kamil
+1628389012850491395 2023-02-22 13:39:29 +0000 &lt;rahmamamarah&gt; Litbang Kompas merilis hasil survei tentang calon presiden (capres) alternatif selain Anies Baswedan, Ganjar Pranowo dan Prabowo Subianto. Gubernur Jawa Barat Ridwan Kamil unggul dominan di survei figur capres alternatif. #BersamaJuara
+1628388885234581504 2023-02-22 13:38:58 +0000 &lt;mawingoso&gt; @Chynthia_K @aniesbaswedan @Joker_Wedoks Anis tuh cuma Anis ga ada bedanya
+1628388870126706688 2023-02-22 13:38:55 +0000 &lt;NCindrasari&gt; @mas_rifai77 @NovalAssegaf @aniesbaswedan Presiden terkoplak sedunia 😂😂😂
+1628388852909109248 2023-02-22 13:38:51 +0000 &lt;humaniesofficia&gt; Anies kupas konsep pemimpin yang ideal di podcast Prestige #aniesbaswedan    https://t.co/2yjNi7h9DK
+1628388831027408902 2023-02-22 13:38:45 +0000 &lt;andiebs&gt; @aryadwipanggak1 @Mdy_Asmara1701 @aniesbaswedan enak kok ditolak
+1628388819623084041 2023-02-22 13:38:43 +0000 &lt;DemoCastID&gt; AHY sosok yang sangat tepat untuk dampingi Anies Baswedan di Pilpres 2024  https://t.co/jOedqYPlso
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1628388817752449029 2023-02-22 13:38:42 +0000 &lt;DaltonSembiring&gt; @TeguhSudarisman @G336387 @AndiSinulingga @aniesbaswedan Ngakunya orang pintar, jawaban terus ngelantur kemana-mana. Patut dikasihani 😇
+1628388816729014274 2023-02-22 13:38:42 +0000 &lt;mumungwisnu_1&gt; Ini salah satu dari banyak kebobr*okan @aniesbaswedan selama pimpin DKI. Ngeruk kali aja baru dikerjakan setelah ada putusan dari Pengadilan, yg dimenangkan atas gugatan warga.  Orang seperti ini kok mau di capreskan oleh @NasDem, @PKSejahtera dan @PDemokrat  ???
+1628388793891041281 2023-02-22 13:38:37 +0000 &lt;Nicaragu417&gt; @asli_kutai @aniesbaswedan 👍👍👍
+1628388766909083654 2023-02-22 13:38:30 +0000 &lt;Mdy_Asmara1701&gt; Surya Paloh Sebut AHY Lebih dari Pantas Jadi Cawapres Anies Baswedan  #AniesAHY menuju #KemenanganBersama2024 for #PerubahanDanPerbaikan  Koalisi Perubahan  https://t.co/OuzdwI4kqQ
+1628388722122297345 2023-02-22 13:38:20 +0000 &lt;andiebs&gt; @wibisonoaji2 @Mdy_Asmara1701 rahasia dong... nanti ketahuan istri pak @aniesbaswedan ntar gk boleh kluyuran lagi
+1628388699124961286 2023-02-22 13:38:14 +0000 &lt;Nicaragu417&gt; @henz55 @aniesbaswedan mantul narasinya om
+1628388639880413185 2023-02-22 13:38:00 +0000 &lt;riksayuda&gt; @GunRomli @KakekHalal Obral sana sini kibulin orang.. gak sadar diri amal amalan Nipu orang...diskon pake doorprize tetep aja nyungseb karena gak ngaca n sadara diri sih.. khawatir saja @Aniesbaswedan @Nasdem ...... AWAS EDAN !!!!
+1628388571236429827 2023-02-22 13:37:44 +0000 &lt;Nicaragu417&gt; @AJazuli5 @aniesbaswedan 🤣
+1628388549665103874 2023-02-22 13:37:38 +0000 &lt;bedhi_arino&gt; @SajoAfrizal @aniesbaswedan Bangun bangun bangun eeee jangan mol or mulu
+1628388534150365185 2023-02-22 13:37:35 +0000 &lt;Nicaragu417&gt; @Deslini2 @aniesbaswedan 😂
+1628388450415300611 2023-02-22 13:37:15 +0000 &lt;LiuHesa&gt; Mau lihat ...sebanyak apa yang mau nganter Anies Baswedan jadi Presiden Indonesia ...
+1628388413752905729 2023-02-22 13:37:06 +0000 &lt;Nicaragu417&gt; @Ahmad65221854 @aniesbaswedan Silahkan cek di google om
+1628388270936834048 2023-02-22 13:36:32 +0000 &lt;riksayuda&gt; Keliling diobral ... maklum Dadakan ... diskonpake doorprize ... tetep aja nyungseb karena selalu kibulin orang ... Ingat Tuhan Tidak Suka !!! @aniesbaswedan @Nasdem ........AWAS  EDAN !!!!
+1628388252297363456 2023-02-22 13:36:27 +0000 &lt;Nicaragu417&gt; @AliatppP @aniesbaswedan top
+1628388236140892161 2023-02-22 13:36:24 +0000 &lt;siImamR&gt; @m4sf13 @non_Dindun @bachrum_achmadi @aniesbaswedan Meringis geli jijik sih
+1628388181723987972 2023-02-22 13:36:11 +0000 &lt;Nicaragu417&gt; @Safarmusafir2 @aniesbaswedan 👍
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1">#read in the data using pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/twint/Anies.csv&#39;</span><span class="p">)</span>
+<span class="c1">#check data has been read in properly</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">FileNotFoundError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">670</span><span class="n">effe7a91f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#read in the data using pandas</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/twint/Anies.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#check data has been read in properly</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span> 
+<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span> 
+<span class="g g-Whitespace">    </span><span class="mi">588</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span> 
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> 
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span> 
+<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span> 
+<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1038</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1042</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> 
+<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
+<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHandles</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">222</span><span class="s2">         self.handles = get_handle(</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">             src,</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">             &quot;r&quot;,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">             # Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">702</span><span class="s2">             handle = open(</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">                 handle,</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 ioargs.mode,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/twint/Anies.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fadetul Fitriyeh<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
