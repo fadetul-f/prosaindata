@@ -1,0 +1,1239 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Pagerank &#8212; Project Sain Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TugasPagerank';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="UTS" href="UTS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="TugasCrawling.html">Crawling Data (Tugas 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pipeline.html">Dokumentasi Pipeline (Tugas 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tugas Pagerank</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fadetul-f/prosaindata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fadetul-f/prosaindata/issues/new?title=Issue%20on%20page%20%2FTugasPagerank.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/TugasPagerank.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tugas Pagerank</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-pagerank">
+<h1><strong>Tugas Pagerank</strong><a class="headerlink" href="#tugas-pagerank" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Buat graph berarah dengan networkx (minimal 9 node )
+Hitung manual pagerank dari graph yang anda buat
+Hitung menggunakan pagerank menggunakan networkx</p></li>
+<li><p>Implementasikan ulang  <a class="github reference external" href="https://github.com/Shakunni/Extractive-Text-Summarization/blob/master/extractive_summarizer.ipynb">Shakunni/Extractive-Text-Summarization</a></p></li>
+<li><p>Upload di github repository webstatis masing masing</p></li>
+<li><p>Beri penjelasan terkait dengan proses</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+                  <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NodeView((1, 2, 4, 3, 5, 8, 6, 7, 9))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#nx.draw_random(G)</span>
+<span class="c1">#nx.draw_circular(G)</span>
+<span class="c1">#nx.draw_spectral(G)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0f81799b2369a0dc0d2ce3dfeaf085a63e1a81b9b720f6d598ab65bac61f3867.png" src="_images/0f81799b2369a0dc0d2ce3dfeaf085a63e1a81b9b720f6d598ab65bac61f3867.png" />
+</div>
+</div>
+<p>###<strong>Hitung Manual</strong></p>
+<p><strong>Page Rank</strong></p>
+<p>Suatu page penting jika ditunjuk oleh banyak page penting</p>
+<p>n = jumlah node keluar
+p = jumlah node yang masuk</p>
+<p>Rumus :</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(PR(u) = \Sigma v \epsilon in(u) \frac{PR(v)}{|out(v)|}\)</span></p>
+</div></blockquote>
+<p>“nilai PageRank untuk halaman u tergantung pada nilai PageRank
+untuk setiap halaman v yang terdapat di set in(u) (set semua halaman yang terhubung ke
+halaman u), dibagi dengan angka |keluar(v)| tautan keluar dari halaman v”</p>
+<p><strong>Langkah-langkah</strong></p>
+<ol class="arabic simple">
+<li><p>Iterasi 0: Inisialisasi semua peringkat menjadi 1/(jumlah
+jumlah halaman) = (1/9)</p></li>
+<li><p>Iterasi 1: Untuk setiap halaman u, perbarui peringkat u ke
+menjadi jumlah dari setiap peringkat halaman masuk v dari
+iterasi sebelumnya, dibagi dengan jumlah
+jumlah total link dari halaman v.
+<strong>P1</strong> = punya 2 link dari P4 yang punya 1 link keluar dan P9 juga punya 1 link keluar maka:</p></li>
+</ol>
+<blockquote>
+<div><p>PR(P1)=(1/9)/1+(1/9)/1 = 2/18</p>
+</div></blockquote>
+<p>PR(P2)=(1/9)/2+(1/9)/3 = 5/54
+PR(P3)=(1/9)/1 = 1/9
+PR(P4)=(1/9)/2+(1/9)/3+(1/9)/3 = 7/54
+PR(P5)=(1/9)/3+(1/9)/4 = 7/108
+PR(P6)=(1/9)/2+(1/9)/2+(1/9)/3+(1/9)/1 = 14/54
+PR(P7)=(1/9)/2+(1/9)/3 = 5/54
+PR(P8)=(1/9)/2+(1/9)/2+(1/9)/2+(1/9)/4 = 7/36
+PR(P9)=(1/9)/4 = 1/36</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-left head"><p>Iterasi 0</p></th>
+<th class="text-left head"><p>Iterasi 1</p></th>
+<th class="text-left head"><p>Hasil</p></th>
+<th class="text-left head"><p>Rank</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P1</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>2/18</p></td>
+<td class="text-left"><p>0,1111</p></td>
+<td class="text-left"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>5/54</p></td>
+<td class="text-left"><p>0,0925</p></td>
+<td class="text-left"><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>P3</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>0,1111</p></td>
+<td class="text-left"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>7/54</p></td>
+<td class="text-left"><p>0,1296</p></td>
+<td class="text-left"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>P5</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>7/108</p></td>
+<td class="text-left"><p>0,0648</p></td>
+<td class="text-left"><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>P6</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>14/54</p></td>
+<td class="text-left"><p>0,2592</p></td>
+<td class="text-left"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>P7</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>5/54</p></td>
+<td class="text-left"><p>0,0925</p></td>
+<td class="text-left"><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>P8</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>7/36</p></td>
+<td class="text-left"><p>0,1944</p></td>
+<td class="text-left"><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>P9</p></td>
+<td class="text-left"><p>1/9</p></td>
+<td class="text-left"><p>1/36</p></td>
+<td class="text-left"><p>0,0277</p></td>
+<td class="text-left"><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PageRank menggunakan networkx</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.11722594067159472,
+ 2: 0.09205022941972085,
+ 4: 0.14840922851271807,
+ 3: 0.09395533271240583,
+ 5: 0.07188861656844779,
+ 8: 0.18786163646864515,
+ 6: 0.1448467481410693,
+ 7: 0.10006063329919762,
+ 9: 0.04370163420620038}
+</pre></div>
+</div>
+</div>
+</div>
+<p>###<strong>Summerization</strong></p>
+<p>Ringkasan Teks di Python</p>
+<p><strong>Motivation:</strong></p>
+<p>Panjang data tekstual semakin meningkat dan orang memiliki lebih sedikit waktu. Seringkali artikel surat kabar memuat teks panjang, katakanlah 1000 -1200 kata. Saat perangkat yang dapat dikenakan menjadi terkenal (Google Glass, Apple Watch, untuk beberapa nama), konten harus beradaptasi dengan ruang layar terbatas yang tersedia di perangkat ini.
+Tugas menghasilkan ringkasan yang cerdas dan akurat untuk potongan teks yang panjang telah menjadi penelitian populer serta masalah industri.</p>
+<p><strong>Approach:</strong>
+Peringkasan teks ekstraktif adalah tentang menemukan kalimat yang lebih penting dari suatu dokumen sebagai ringkasan dari dokumen itu.
+Pendekatan kami menggunakan algoritma PageRank untuk menemukan kalimat yang penting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>PyPDF2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
+  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">8.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">csr_matrix</span>
+
+<span class="c1">#library PyPDF2 untuk membaca file pdf</span>
+<span class="kn">import</span> <span class="nn">PyPDF2</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="c1"># library matplotlib digunakan untuk memvisualisasikan data dalam bentuk graph</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># networkx digunakan untuk membuat graph dan implementasi dari algoritma PageRank</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Library PunktSentenceTokenizer digunakan untuk tokenisasi dokumen menjadi beberapa kalimat</span>
+<span class="c1"># Tokenisasi: Tokenisasi adalah proses memisah dan kemungkinan mengklasifikasikan bagian dari string karakter masukan.</span>
+<span class="c1"># Token yang dihasilkan kemudian diteruskan ke beberapa bentuk pemrosesan lainnya.</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize.punkt</span> <span class="kn">import</span> <span class="n">PunktSentenceTokenizer</span>
+
+<span class="c1"># CountVectorizer: digunakan untuk membuat document-term matrix</span>
+
+<span class="c1"># tFidTransformer: digunakan untuk mengeksekusi method fit_transform() </span>
+<span class="c1"># yang memberikan output sebagai document-term matrix yang dinormalisasi (value 0-1) menurut TF-IDF</span>
+<span class="c1"># TF(Term Frequency): no. kali istilah(kata di sini) muncul di dokumen saat ini(kalimat tunggal di sini)</span>
+<span class="c1"># IDF(Inverse Document Frequency): no. kali istilah (kata di sini) muncul di seluruh korpus</span>
+<span class="c1"># Corpus: mengatur semua sentences</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfTransformer</span><span class="p">,</span> <span class="n">CountVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 2.  Fungsi untuk membaca dokumen dari user</span>
+<span class="c1"># format yang diperbolehkan: .txt, .pdf </span>
+<span class="c1"># </span>
+<span class="c1"># Input: Ambil nama dari file sebagai input </span>
+<span class="c1"># </span>
+<span class="c1"># Output: Mengembalikan output string yang berisi konten file.</span>
+
+<span class="c1"># Berikut adalah contoh bagaimana method di jalankan</span>
+<span class="c1"># pertama, ambil dokumen input</span>
+<span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Silahkan masukkan nama file: &#39;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anda telah memasukkan dokumen </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="c1"># membaca tipe dokumen</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.txt&#39;</span><span class="p">):</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">):</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+
+    <span class="c1"># Jika .txt file   </span>
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            
+    <span class="c1"># Jika .pdf file</span>
+    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">pdfFileObj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+        <span class="n">pdfReader</span> <span class="o">=</span> <span class="n">PyPDF2</span><span class="o">.</span><span class="n">PdfReader</span><span class="p">(</span><span class="n">pdfFileObj</span><span class="p">)</span>
+        <span class="n">pageObj</span> <span class="o">=</span> <span class="n">pdfReader</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">pageObj</span><span class="o">.</span><span class="n">extract_text</span><span class="p">()</span>
+        <span class="n">pdfFileObj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="c1"># Jika bukan .txt atau .pdf</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;gagal membuka file&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mengembalikan string kosong&#39;</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">document</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 3. Function untuk tokenisasi dokumen</span>
+<span class="c1"># Input: teks dokumen berupa string</span>
+<span class="c1"># Output: Daftar yang berisi kalimat sebagai elemennya</span>
+
+<span class="c1"># Fungsi untuk tokenisasi kalimat</span>
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="c1"># Tokenisasi menggunakan PunktSentenceTokenizer</span>
+    <span class="c1"># memanggil instance dari class ke dalam variable doc_tokenizer</span>
+    <span class="n">doc_tokenizer</span> <span class="o">=</span> <span class="n">PunktSentenceTokenizer</span><span class="p">()</span>
+    
+    <span class="c1"># tokenize() method: mengambil dokumen sebagai input dan mengembalikan daftar semua kalimat dalam dokumen</span>
+    
+    <span class="c1"># sentences adalah daftar yang memuat tiap kalimat dalam dokumen sebagai elemen</span>
+    <span class="n">sentences_list</span> <span class="o">=</span> <span class="n">doc_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sentences_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 4. Membaca dokumen</span>
+
+<span class="c1"># membaca file dan ukuran file</span>
+<span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">StdinNotImplementedError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-10-544fc864cee6&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># membaca file dan ukuran file</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+
+<span class="nn">&lt;ipython-input-8-a56e80127ba3&gt;</span> in <span class="ni">readDoc</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># pertama, ambil dokumen input</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Silahkan masukkan nama file: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anda telah memasukkan dokumen </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 5. Membuat daftar kalimat dalam dokumen</span>
+
+<span class="c1"># kita akan tokenisasi dokumen untuk proses selanjutnya</span>
+<span class="c1"># tokenisasi kalimat berarti membuat daftar semua kalimat dalam dokumen.</span>
+<span class="c1"># Perlu tokenisasi dokumen: Awalnya dokumen hanya dalam format string.</span>
+<span class="c1"># juka ingin memproses dokumen, maka perlu menyimpannya dalam data terstruktur.</span>
+<span class="c1"># Tokenisasi dokumen ke dalam kata juga bisa dilakukan, tapi kali ini tokenisasi akan dilakukan dalam kalimat</span>
+<span class="c1"># Karena kita ingin memilih kalimat yang paling relevan, maka hanya perlu membuat token kalimat</span>
+<span class="n">sentences_list</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+<span class="c1"># print ukuran memori yang digunakan daftar semua kalimat</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the list in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)))</span>
+
+<span class="c1"># ukuran elemen pertama dalam daftar</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the item 0 in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+
+<span class="c1"># melihat tipe data sentences_list</span>
+<span class="c1"># harusnyas sebuah list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">))</span>
+
+<span class="c1"># len() method digunakan untuk melihat jumlah elemen dalam list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the list &quot;sentences&quot; is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)))</span>
+
+<span class="c1"># print semua elemen list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentences_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list in Bytes is: 200
+The size of the item 0 in Bytes is: 133
+&lt;class &#39;list&#39;&gt;
+The size of the list &quot;sentences&quot; is: 18
+Indonesian Journal of Electronics  and Instrumentation Systems  (IJEIS ) 
+Vol.8, No.
+1, April  2018 , pp.
+73~82 
+ISSN  (print) : 2088 -3714 , ISSN (online) : 2460 -7681   
+DOI: 10.22146/ijeis.28729                                    73 
+  
+Received October  3rd,2017; Revised March  29th, 201 8; Accepted April  30th, 201 8 Collaborative Filtering  Recommender System pada 
+Virtual 3D  Kelas Cendekia  
+ 
+Angga Setia Wardana  *1, Muhammad Idham Ananta Timur2 
+1Prodi Elektronika dan Instrumentasi, DIKE, FMIPA, UGM, Yogyakarta, Indonesia  
+2Departemen  Ilmu Komputer dan Elektronika, FMIPA U GM, Yogyakarta , Indonesia  
+e-mail: *1anggawardn@gmail.
+com, 2idham@ ugm.ac.id   
+ 
+ 
+Abstrak  
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun.
+Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan proses pembelajaran 
+yang berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien.
+Salah satu pener apan dari konsep Kelas Cendekia adalah pembelajaran dengan memanfaatkan 
+dunia virtual.
+Informasi yang terkumpul dalam kelas cendekia akan bertambah banyak 
+sehingga dibutuhkan sebuah sistem.
+Sistem rekomendasi collaborative filtering merupakan 
+sistem paling  sesuai dengan kelas cendekia  Dengan  tingkat sparsity   d ata   training   sebesar   
+80%,   diimplementasikan   sistem   rekomendasi   collaborative filtering  dengan tingkat 
+kesalahan yang jika dihitung dengan RMSE bernilai  1.060709  atau dapat dikatakan b ahwa 
+tingkat akurasinya senilai 78.79 %.
+Kata kunci —sistem rekomendasi, kelas cendekia,  lingkungan  virtual  
+ 
+ 
+Abstract  
+ Intelligent  Clasroom s is a concept of modern learning process where users can 
+perfor m collaborative learning  wherever and wh enever.
+Wi th learning in Int elligent  Class room , 
+users can  get different learning experience where learning process is expected to run more 
+effectively and efficiently.
+One  application of the Intelligent Classroom s concept is learning by 
+utilizing the virtual world.
+The information collected in the Intelligent Classroom  will increase 
+so that a system is needed.
+The recommendation system of collaborative filtering is the most 
+appropriate system with the intellectual class.
+With the sparsity of training rate of 80%, it is 
+implemented a collaborative filtering recommendation system with error rate which if 
+calculated with RMSE is 1.060709 or it can be said that the accuracy level is 78.79%.
+Keywords —recommender  system, Intelligent  classroom, Collaborative filtering ,Virtu al 
+environment  
+ 
+ 
+1.
+PENDAHULUAN  
+ 
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun.
+Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan  proses pembelajaran yang 
+berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien.
+Hal ini 
+dikarenakan proses pembelajaran dibangun berdasarkan Social Contructivism  yang merupakan
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 6. Menghasilkan term-document matrix (TD matrix) dari data</span>
+
+<span class="c1"># Ubah kumpulan dokumen teks menjadi matriks jumlah token</span>
+<span class="c1"># metode fit_transform dari kelas CountVectorizer()</span>
+<span class="c1"># Pelajari kamus kosakata dan kembalikan matriks istilah-dokumen.</span>
+<span class="c1"># I/p: Iterable yang menghasilkan objek str, unicode atau file.</span>
+<span class="c1"># O/p: Matriks dokumen istilah bernama cv_matrix</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">cv_matrix</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)</span>
+
+
+<span class="c1"># kegunaan method CountVectorizer().fit_transform(text)</span>
+<span class="n">cv_demo</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span> <span class="c1"># a demo object dari class CountVectorizer</span>
+
+<span class="c1"># gunakan kata-kata berulang untuk membuat susunan matriks teks dokumen yang tidak ambigu</span>
+
+<span class="n">text_demo</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ashish is good, you are bad&quot;</span><span class="p">,</span> <span class="s2">&quot;I am not bad&quot;</span><span class="p">]</span> 
+<span class="n">res_demo</span> <span class="o">=</span> <span class="n">cv_demo</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text_demo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result demo array is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res_demo</span><span class="o">.</span><span class="n">toarray</span><span class="p">()))</span>
+
+<span class="c1"># Hasilnya adalah matriks 2-d yang berisi matriks teks dokumen</span>
+<span class="c1"># Perhatikan bahwa di baris kedua, ada 2.</span>
+<span class="c1"># juga, bad diulang dua kali dalam kalimat itu.</span>
+<span class="c1"># jadi kita dapat menyimpulkan bahwa 2 sesuai dengan kata &#39;buruk&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Feature list: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cv_demo</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()))</span>
+
+<span class="c1"># mencetak tipe cv_matrix dan disimpan dalam format baris terkompresi</span>
+<span class="c1"># format baris terkompresi:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The data type of bow matrix </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of the matrix </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cv_matrix</span><span class="o">.</span><span class="n">get_shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Size of the matrix is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+
+
+<span class="c1"># Tnormalized: matriks jangka dokumen dinormalisasi (nilai 0-1) menurut TF-IDF</span>
+<span class="c1"># TF(Term Frequency): no. kali istilah(kata di sini) muncul di dokumen saat ini(kalimat tunggal di sini)</span>
+<span class="c1"># IDF(Inverse Document Frequency): no. kali istilah (kata di sini) muncul di seluruh korpus</span>
+<span class="c1"># Corpus: kumpulan semua kalimat</span>
+
+<span class="n">normal_matrix</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">normal_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">toarray</span><span class="p">)</span>
+<span class="n">res_graph</span> <span class="o">=</span> <span class="n">normal_matrix</span> <span class="o">*</span> <span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># plt.spy(res_graph)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result demo array is [[0 1 1 1 1 1 0 1]
+ [1 0 0 1 0 0 1 0]]
+Feature list: [&#39;am&#39; &#39;are&#39; &#39;ashish&#39; &#39;bad&#39; &#39;good&#39; &#39;is&#39; &#39;not&#39; &#39;you&#39;]
+The data type of bow matrix &lt;class &#39;scipy.sparse._csr.csr_matrix&#39;&gt;
+Shape of the matrix &lt;bound method spmatrix.get_shape of &lt;18x214 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 343 stored elements in Compressed Sparse Row format&gt;&gt;
+Size of the matrix is: 48
+[&#39;060709&#39; &#39;10&#39; &#39;1anggawardn&#39; &#39;1prodi&#39; &#39;201&#39; &#39;2017&#39; &#39;2018&#39; &#39;2088&#39; &#39;22146&#39;
+ &#39;2460&#39; &#39;28729&#39; &#39;29th&#39; &#39;2departemen&#39; &#39;2idham&#39; &#39;30th&#39; &#39;3714&#39; &#39;3d&#39; &#39;3rd&#39;
+ &#39;73&#39; &#39;7681&#39; &#39;78&#39; &#39;79&#39; &#39;80&#39; &#39;82&#39; &#39;abstract&#39; &#39;abstrak&#39; &#39;ac&#39; &#39;accepted&#39;
+ &#39;accuracy&#39; &#39;adalah&#39; &#39;ahwa&#39; &#39;akan&#39; &#39;akurasinya&#39; &#39;al&#39; &#39;ananta&#39; &#39;and&#39;
+ &#39;angga&#39; &#39;apan&#39; &#39;application&#39; &#39;appropriate&#39; &#39;april&#39; &#39;ata&#39; &#39;atau&#39; &#39;banyak&#39;
+ &#39;be&#39; &#39;berbeda&#39; &#39;berdasarkan&#39; &#39;berjalan&#39; &#39;bernilai&#39; &#39;bertambah&#39; &#39;by&#39;
+ &#39;calculated&#39; &#39;can&#39; &#39;cendekia&#39; &#39;clasroom&#39; &#39;class&#39; &#39;classroom&#39;
+ &#39;collaborative&#39; &#39;collected&#39; &#39;com&#39; &#39;concept&#39; &#39;contructivism&#39; &#39;dalam&#39; &#39;dan&#39;
+ &#39;dapat&#39; &#39;dari&#39; &#39;dengan&#39; &#39;di&#39; &#39;dibangun&#39; &#39;dibutuhkan&#39; &#39;different&#39;
+ &#39;diharapkan&#39; &#39;dihitung&#39; &#39;diimplementasikan&#39; &#39;dikarenakan&#39; &#39;dikatakan&#39;
+ &#39;dike&#39; &#39;dimana&#39; &#39;dimanapun&#39; &#39;doi&#39; &#39;dunia&#39; &#39;efektif&#39; &#39;effectively&#39;
+ &#39;efficiently&#39; &#39;efisien&#39; &#39;electronics&#39; &#39;elektronika&#39; &#39;elligent&#39; &#39;enever&#39;
+ &#39;environment&#39; &#39;error&#39; &#39;expected&#39; &#39;experience&#39; &#39;filtering&#39; &#39;fmipa&#39; &#39;get&#39;
+ &#39;gm&#39; &#39;gmail&#39; &#39;hal&#39; &#39;id&#39; &#39;idham&#39; &#39;if&#39; &#39;ijeis&#39; &#39;ilmu&#39; &#39;implemented&#39; &#39;in&#39;
+ &#39;increase&#39; &#39;indonesia&#39; &#39;indonesian&#39; &#39;informasi&#39; &#39;information&#39; &#39;ini&#39;
+ &#39;instrumentasi&#39; &#39;instrumentation&#39; &#39;int&#39; &#39;intellectual&#39; &#39;intelligent&#39; &#39;is&#39;
+ &#39;issn&#39; &#39;it&#39; &#39;jika&#39; &#39;journal&#39; &#39;kapanpun&#39; &#39;kata&#39; &#39;kelas&#39; &#39;kesalahan&#39;
+ &#39;keywords&#39; &#39;kolaboratif&#39; &#39;komputer&#39; &#39;konsep&#39; &#39;kunci&#39; &#39;learning&#39; &#39;lebih&#39;
+ &#39;level&#39; &#39;lingkungan&#39; &#39;mail&#39; &#39;march&#39; &#39;melakukan&#39; &#39;memanfaatkan&#39;
+ &#39;merasakan&#39; &#39;merupakan&#39; &#39;modern&#39; &#39;more&#39; &#39;most&#39; &#39;muhammad&#39; &#39;needed&#39; &#39;no&#39;
+ &#39;october&#39; &#39;of&#39; &#39;one&#39; &#39;online&#39; &#39;or&#39; &#39;pada&#39; &#39;paling&#39; &#39;pembelajaran&#39;
+ &#39;pendahuluan&#39; &#39;pener&#39; &#39;pengguna&#39; &#39;perfor&#39; &#39;pp&#39; &#39;print&#39; &#39;process&#39; &#39;proses&#39;
+ &#39;rate&#39; &#39;received&#39; &#39;recommendation&#39; &#39;recommender&#39; &#39;rekomendasi&#39; &#39;revised&#39;
+ &#39;rmse&#39; &#39;room&#39; &#39;run&#39; &#39;said&#39; &#39;salah&#39; &#39;satu&#39; &#39;sebesar&#39; &#39;sebuah&#39; &#39;secara&#39;
+ &#39;sehingga&#39; &#39;senilai&#39; &#39;sesuai&#39; &#39;setia&#39; &#39;sistem&#39; &#39;so&#39; &#39;social&#39; &#39;sparsity&#39;
+ &#39;suatu&#39; &#39;system&#39; &#39;systems&#39; &#39;terkumpul&#39; &#39;th&#39; &#39;that&#39; &#39;the&#39; &#39;timur2&#39;
+ &#39;tingkat&#39; &#39;to&#39; &#39;training&#39; &#39;ugm&#39; &#39;users&#39; &#39;utilizing&#39; &#39;virtu&#39; &#39;virtual&#39;
+ &#39;vol&#39; &#39;wardana&#39; &#39;wh&#39; &#39;where&#39; &#39;wherever&#39; &#39;which&#39; &#39;wi&#39; &#39;will&#39; &#39;with&#39;
+ &#39;world&#39; &#39;yang&#39; &#39;yogyakarta&#39;]
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 1 1 ... 0 0 2]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 1 0]
+ [0 0 0 ... 0 1 0]]
+[[0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         0.1161704  0.1161704  ... 0.         0.         0.2323408 ]
+ ...
+ [0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         0.         0.         ... 0.         0.16567641 0.        ]
+ [0.         0.         0.         ... 0.         0.22357048 0.        ]]
+&lt;bound method _cs_matrix.toarray of &lt;214x18 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 343 stored elements in Compressed Sparse Column format&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 7. Hasilkan grafik untuk dokumen untuk menerapkan algoritma PageRank</span>
+
+
+<span class="c1"># menggambar grafik untuk melanjutkan algoritma textrank</span>
+<span class="c1"># nx_graph adalah grafik yang dikembangkan menggunakan pustaka networkx</span>
+<span class="c1"># setiap node mewakili sebuah kalimat</span>
+<span class="c1"># tepi menyatakan bahwa mereka memiliki kesamaan kata</span>
+<span class="c1"># bobot tepi adalah jumlah kata yang umum di kedua kalimat (node)</span>
+<span class="c1"># nx.draw() digunakan untuk menggambar grafik yang dibuat</span>
+
+
+<span class="n">nx_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_scipy_sparse_array</span><span class="p">(</span><span class="n">res_graph</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of edges </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of vertices </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()))</span>
+<span class="c1"># plt.show()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The memory used by the graph in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of edges 97
+Number of vertices 18
+The memory used by the graph in Bytes is: 48
+</pre></div>
+</div>
+<img alt="_images/e97ca72f773e59367e584f6b92e15499f5a46226cc67c2a4ab4e45d9010b08e4.png" src="_images/e97ca72f773e59367e584f6b92e15499f5a46226cc67c2a4ab4e45d9010b08e4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 8. Mendapatkan peringkat setiap kalimat menggunakan pagerank</span>
+
+<span class="c1"># ranks adalah kamus dengan key=node(kalimat) dan value=textrank (peringkat setiap kalimat)</span>
+<span class="n">ranks</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)</span>
+
+<span class="c1"># melihat tipe data ranks</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ranks</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size used by the dictionary in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">ranks</span><span class="p">)))</span>
+
+<span class="c1"># print the dictionary</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ranks</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+The size used by the dictionary in Bytes is: 640
+0 0.04316592917450619
+1 0.05001343805856971
+2 0.04634898521701686
+3 0.06466504860361885
+4 0.07208045621078349
+5 0.047154571081055835
+6 0.041957187169389204
+7 0.052219123700016856
+8 0.06229534064546763
+9 0.047123747793933704
+10 0.061942433331954316
+11 0.05583487449700418
+12 0.06400187002858923
+13 0.05763862576210972
+14 0.04863795386517765
+15 0.06822434700973648
+16 0.07208045621078349
+17 0.04461561164028649
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 9. Menemukan kalimat penting dan membuat ringkasan</span>
+
+<span class="c1"># metode enumerate: mengembalikan objek enumerate</span>
+<span class="c1"># Penggunaan daftar Pemahaman</span>
+<span class="c1"># O/p: larik_kalimat adalah urutan (urutan menurun nilai skor w.r.t.) larik peringkat 2-d[kalimat] dan kalimat</span>
+<span class="c1">#Misalnya, jika ada dua kalimat: S1 (dengan skor S1 = s1) dan S2 dengan skor s2, dengan s2&gt;s1</span>
+<span class="c1"># maka larik_kalimat adalah [[s2, S2], [s1, S1]]</span>
+<span class="n">sentence_array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(((</span><span class="n">ranks</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sentence_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)</span>
+
+<span class="c1"># sebagai kalimat_array dalam urutan nilai skor wrt menurun</span>
+<span class="c1"># fmax adalah nilai skor terbesar (skor elemen pertama)</span>
+<span class="c1"># fmin adalah nilai skor terkecil (skor elemen terakhir)</span>
+<span class="n">rank_max</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rank_min</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># print nilai terbesar dan terkecil dari skor kalimat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_min</span><span class="p">)</span>
+
+<span class="c1"># Normalisasi skor</span>
+<span class="c1"># agar keluar di range 0-1</span>
+<span class="c1"># fmax menjadi 1</span>
+<span class="c1"># fmin menjadi 0</span>
+<span class="c1"># simpan nilai normalisasi dalam daftar temp_array</span>
+<span class="n">temp_array</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># jika semua kalimat memiliki peringkat yang sama, berarti semuanya sama</span>
+<span class="c1"># Mengambil kalimat apapun akan memberikan ringkasan, ucapkan kalimat pertama</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">rank_max</span> <span class="o">-</span> <span class="n">rank_min</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">temp_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Jika kalimat memiliki peringkat yang berbeda</span>
+<span class="k">if</span> <span class="n">flag</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)):</span>
+        <span class="n">temp_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">rank_max</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">))</span>
+
+
+<span class="c1"># Perhitungan ambang batas:</span>
+<span class="c1"># Kami mengambil nilai rata-rata dari skor yang dinormalisasi</span>
+<span class="c1"># kalimat apa pun dengan skor normalisasi 0,2 lebih dari nilai rata-rata dianggap</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.2</span>
+
+
+<span class="c1"># Pisahkan kalimat yang memenuhi kriteria memiliki skor di atas ambang batas</span>
+<span class="n">sentence_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">temp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">sentence_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sentence_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sentence_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.07208045621078349
+0.041957187169389204
+18
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### 10. Menulis ringkasan ke dalam file baru</span>
+
+<span class="c1"># print(sentence_list)</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sentence_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+<span class="c1"># menyimpan data ke dalam file lain dengan nama sum.txt</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sum.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span>
+<span class="c1">#print(type(f))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;-------------------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">close</span>
+
+<span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">sentence_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan proses pembelajaran 
+yang berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien. Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan  proses pembelajaran yang 
+berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien. PENDAHULUAN  
+ 
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun. com, 2idham@ ugm.ac.id   
+ 
+ 
+Abstrak  
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun. The recommendation system of collaborative filtering is the most 
+appropriate system with the intellectual class. Kata kunci —sistem rekomendasi, kelas cendekia,  lingkungan  virtual  
+ 
+ 
+Abstract  
+ Intelligent  Clasroom s is a concept of modern learning process where users can 
+perfor m collaborative learning  wherever and wh enever. One  application of the Intelligent Classroom s concept is learning by 
+utilizing the virtual world.
+Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan proses pembelajaran 
+yang berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien.
+Dengan pembelajaran di Kelas Cendekia, pengguna dapat merasakan  proses pembelajaran yang 
+berbeda dimana proses pembelajaran diharapkan dapat berjalan lebih efektif dan efisien.
+PENDAHULUAN  
+ 
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun.
+com, 2idham@ ugm.ac.id   
+ 
+ 
+Abstrak  
+Kelas Cendekia merupakan suatu konsep proses pembelajaran modern dimana 
+pengguna dapat melakukan proses pembelajaran secara kolaboratif dimanapun dan kapanpun.
+The recommendation system of collaborative filtering is the most 
+appropriate system with the intellectual class.
+Kata kunci —sistem rekomendasi, kelas cendekia,  lingkungan  virtual  
+ 
+ 
+Abstract  
+ Intelligent  Clasroom s is a concept of modern learning process where users can 
+perfor m collaborative learning  wherever and wh enever.
+One  application of the Intelligent Classroom s concept is learning by 
+utilizing the virtual world.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UTS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">UTS</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fadetul Fitriyeh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
